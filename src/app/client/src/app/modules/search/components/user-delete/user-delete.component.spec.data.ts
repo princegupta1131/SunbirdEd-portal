@@ -79,7 +79,7 @@ export const Response = {
                         'createdDate': '2017-09-20 05:28:03:560+0000',
                         'isDeleted': null,
                         'createdBy': 'c7e35899-2ed1-47ad-9338-b1d8e2170483',
-                        'boardOrUniversity': 'CBSE',
+                        'boardOrUniversity': 'sample_category1',
                         'grade': null,
                         'percentage': null,
                         'name': 'Delhi Public School',

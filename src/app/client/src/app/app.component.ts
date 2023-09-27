@@ -513,7 +513,6 @@ export class AppComponent implements OnInit, OnDestroy {
       zip(this.tenantService.tenantData$, this.getOrgDetails(false)).subscribe((res) => {
         if (_.get(res[0], 'tenantData')) {
           const orgDetailsFromSlug = this.cacheService.get('orgDetailsFromSlug');
-          // if (_.get(orgDetailsFromSlug, 'slug') !== this.tenantService.slugForIgot) {
 
           let userType;
           if (this.isDesktopApp && this.isGuestUser) {
@@ -533,7 +532,6 @@ export class AppComponent implements OnInit, OnDestroy {
             userType = localStorage.getItem('userType');
           }
           this.showUserTypePopup = _.get(this.userService, 'loggedIn') ? (!_.get(this.userService, 'userProfile.profileUserType.type') || !userType) : this.showUserTypePopup;
-          // }
         }
       });
     }, (err) => {

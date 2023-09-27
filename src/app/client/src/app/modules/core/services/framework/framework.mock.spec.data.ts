@@ -88,11 +88,11 @@ export const mockFrameworkData = {
                                 'identifier': 'ncf_gradelevel_grade5', 'code': 'grade5',
                                 'name': 'Grade 5', 'description': '', 'category': 'gradeLevel',
                                 'status': 'Live'
-                            }], 'identifier': 'ncf_board_ncert',
-                            'code': 'ncert', 'name': 'NCERT', 'description': '', 'index': 1,
+                            }], 'identifier': 'ncf_board_sample-framework',
+                            'code': 'sample-framework', 'name': 'sample_category1', 'description': '', 'index': 1,
                             'category': 'board', 'status': 'Live'
                         }, {
-                            'identifier': 'ncf_board_cbse', 'code': 'cbse', 'name': 'CBSE',
+                            'identifier': 'ncf_board_sample-framework', 'code': 'sample-framework', 'name': 'sample_category1',
                             'description': '', 'index': 2, 'category': 'board', 'status': 'Live'
                         },
                         {
@@ -447,10 +447,10 @@ export const mockFrameworkData = {
                             'identifier': 'ncf_gradelevel_grade5', 'code': 'grade5', 'name': 'Grade 5',
                             'description': '', 'category': 'gradeLevel', 'status': 'Live'
                         }],
-                        'identifier': 'ncf_board_ncert', 'code': 'ncert', 'name': 'NCERT',
+                        'identifier': 'ncf_board_sample-framework', 'code': 'sample-framework', 'name': 'sample_category1',
                         'description': '', 'index': 1, 'category': 'board', 'status': 'Live'
                     }, {
-                        'identifier': 'ncf_board_cbse', 'code': 'cbse', 'name': 'CBSE', 'description': '',
+                        'identifier': 'ncf_board_sample-framework', 'code': 'sample-framework', 'name': 'sample_category1', 'description': '',
                         'index': 2, 'category': 'board', 'status': 'Live'
                     }, {
                         'identifier': 'ncf_board_icse',
@@ -784,18 +784,18 @@ export const mockFrameworkData = {
                       'status': 'Live'
                     }
                   ],
-                  'identifier': 'ncf_board_ncert',
-                  'code': 'ncert',
-                  'name': 'NCERT',
+                  'identifier': 'ncf_board_sample-framework',
+                  'code': 'sample-framework',
+                  'name': 'sample_category1',
                   'description': '',
                   'index': 1,
                   'category': 'board',
                   'status': 'Live'
                 },
                 {
-                  'identifier': 'ncf_board_cbse',
-                  'code': 'cbse',
-                  'name': 'CBSE',
+                  'identifier': 'ncf_board_sample-framework',
+                  'code': 'sample-framework',
+                  'name': 'sample_category1',
                   'description': '',
                   'index': 2,
                   'category': 'board',

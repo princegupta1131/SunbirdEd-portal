@@ -138,7 +138,7 @@ export const Response = {
           'Worksheet',
           'Game'
         ],
-        'board': ['CBSE'],
+        'board': ['sample_category1'],
         'channel': '0123166367624478721'
       },
       'limit': 20,
@@ -335,7 +335,7 @@ export const Response = {
           'dataType': 'text',
           'name': 'Board',
           'label': 'Board',
-          'description': 'Education Board (Like MP Board, NCERT, etc)',
+          'description': 'Education Board (Like MP Board, sample_category1, etc)',
           'editable': true,
           'inputType': 'select',
           'required': false,
@@ -347,18 +347,18 @@ export const Response = {
           'index': 1,
           'range': [
             {
-              'identifier': 'ncf_board_ncert',
-              'code': 'ncert',
-              'name': 'NCERT',
+              'identifier': 'ncf_board_sample-framework',
+              'code': 'sample-framework',
+              'name': 'sample_category1',
               'description': '',
               'index': 2,
               'category': 'board',
               'status': 'Live'
             },
             {
-              'identifier': 'ncf_board_cbse',
-              'code': 'cbse',
-              'name': 'CBSE',
+              'identifier': 'ncf_board_sample-framework',
+              'code': 'sample-framework',
+              'name': 'sample_category1',
               'description': '',
               'index': 1,
               'category': 'board',

@@ -138,18 +138,18 @@ export const mockRes = {
                           'status': 'Live'
                         }
                       ],
-                      'identifier': 'ncf_board_ncert',
-                      'code': 'ncert',
-                      'name': 'NCERT',
+                      'identifier': 'ncf_board_sample-framework',
+                      'code': 'sample-framework',
+                      'name': 'sample_category1',
                       'description': '',
                       'index': 1,
                       'category': 'board',
                       'status': 'Live'
                     },
                     {
-                      'identifier': 'ncf_board_cbse',
-                      'code': 'cbse',
-                      'name': 'CBSE',
+                      'identifier': 'ncf_board_sample-framework',
+                      'code': 'sample-framework',
+                      'name': 'sample_category1',
                       'description': '',
                       'index': 2,
                       'category': 'board',

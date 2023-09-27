@@ -141,7 +141,7 @@ export class MainFooterComponent implements OnInit, AfterViewInit, OnDestroy {
   redirectToMobileApp() {
     const playstoreLink = _.get(this.tenantFooter, 'playstoreLink');
     if (playstoreLink) {
-      // For iGot the URL is direclty taken; no UTM needed
+      // For slugForSampleChannel the URL is direclty taken; no UTM needed
       this.redirect(playstoreLink);
     } else {
       let applink = this.configService.appConfig.UrlLinks.downloadDikshaApp;

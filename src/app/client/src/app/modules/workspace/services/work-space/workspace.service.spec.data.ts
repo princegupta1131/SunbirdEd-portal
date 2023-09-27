@@ -230,7 +230,7 @@ export const mockRes = {
         'IL_FUNC_OBJECT_TYPE': 'Content',
         'name': 'Angular 5 routing tutorial',
         'IL_UNIQUE_ID': 'do_1125083103747932161150',
-        'board': 'NCERT',
+        'board': 'sample_category1',
         'status': 'Review',
         'resourceType': 'Learn',
         'node_id': 29215

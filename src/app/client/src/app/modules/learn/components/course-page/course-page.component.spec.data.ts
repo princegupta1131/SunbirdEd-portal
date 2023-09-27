@@ -189,9 +189,9 @@ export const Response = {
                 'copyright': 'Tamil Nadu',
                 'c_diksha_preprod_private_batch_count': 0,
                 'channel': '0128325322816552960',
-                'downloadUrl': 'https://preprodall.blob.core.windows.net/ntp-content-preprod/ecar_files/do_21308940206039040011229/cbse-cred_1597827561207_do_21308940206039040011229_1.0_spine.ecar',
+                'downloadUrl': 'https://preprodall.blob.core.windows.net/ntp-content-preprod/ecar_files/do_21308940206039040011229/sample-framework-cred_1597827561207_do_21308940206039040011229_1.0_spine.ecar',
                 'organisation': [
-                  'CBSE'
+                  'sample_category1'
                 ],
                 'language': [
                   'English'
@@ -199,11 +199,11 @@ export const Response = {
                 'mimeType': 'application/vnd.ekstep.content-collection',
                 'variants': {
                   'online': {
-                    'ecarUrl': 'https://preprodall.blob.core.windows.net/ntp-content-preprod/ecar_files/do_21308940206039040011229/cbse-cred_1597827561315_do_21308940206039040011229_1.0_online.ecar',
+                    'ecarUrl': 'https://preprodall.blob.core.windows.net/ntp-content-preprod/ecar_files/do_21308940206039040011229/sample-framework-cred_1597827561315_do_21308940206039040011229_1.0_online.ecar',
                     'size': 6201
                   },
                   'spine': {
-                    'ecarUrl': 'https://preprodall.blob.core.windows.net/ntp-content-preprod/ecar_files/do_21308940206039040011229/cbse-cred_1597827561207_do_21308940206039040011229_1.0_spine.ecar',
+                    'ecarUrl': 'https://preprodall.blob.core.windows.net/ntp-content-preprod/ecar_files/do_21308940206039040011229/sample-framework-cred_1597827561207_do_21308940206039040011229_1.0_spine.ecar',
                     'size': 117218
                   }
                 },
@@ -254,10 +254,10 @@ export const Response = {
                 'lastPublishedOn': '2020-08-19T08:59:21.130+0000',
                 'size': 117218,
                 'IL_FUNC_OBJECT_TYPE': 'Content',
-                'name': 'Cbse cred',
+                'name': 'sample-framework cred',
                 'status': 'Live',
                 'orgDetails': {
-                  'orgName': 'CBSE',
+                  'orgName': 'sample_category1',
                   'email': null
                 },
                 'code': 'org.sunbird.Kgytn3.copy',
@@ -273,7 +273,7 @@ export const Response = {
                       '0128325322816552960'
                     ],
                     'endDate': null,
-                    'name': 'Cbse cred',
+                    'name': 'sample-framework cred',
                     'batchId': '013089407459344384156',
                     'enrollmentType': 'open',
                     'enrollmentEndDate': null,
@@ -288,7 +288,7 @@ export const Response = {
                 'originData': '{\'name\':\'Course 1 - 0818\',\'copyType\':\'deep\',\'license\':\'CC BY-NC 4.0\',\'organisation\':[\'Tamil Nadu\']}',
                 'SYS_INTERNAL_LAST_UPDATED_ON': '2020-08-19T08:59:22.436+0000',
                 'dialcodeRequired': 'No',
-                'creator': 'CbseCreator',
+                'creator': 'sample-frameworkCreator',
                 'lastStatusChangedOn': '2020-08-19T08:59:21.386+0000',
                 'createdFor': [
                   '0128325322816552960'
@@ -303,7 +303,7 @@ export const Response = {
                 'idealScreenDensity': 'hdpi',
                 'framework': 'TPD',
                 'depth': 0,
-                's3Key': 'ecar_files/do_21308940206039040011229/cbse-cred_1597827561207_do_21308940206039040011229_1.0_spine.ecar',
+                's3Key': 'ecar_files/do_21308940206039040011229/sample-framework-cred_1597827561207_do_21308940206039040011229_1.0_spine.ecar',
                 'dialcodes': [
                   'W3V8J8'
                 ],
@@ -319,7 +319,7 @@ export const Response = {
                 'ownershipType': [
                   'createdBy'
                 ],
-                'copyright': 'CBSE',
+                'copyright': 'sample_category1',
                 'keywords': [
                   'Ganit',
                   'Aryabhata',
@@ -332,7 +332,7 @@ export const Response = {
                 'channel': '0128325322816552960',
                 'downloadUrl': 'https://preprodall.blob.core.windows.net/ntp-content-preprod/ecar_files/do_21308956613515673611357/aryabhata-ganit-challenge_1_1597848146029_do_21308956613515673611357_1.0_spine.ecar',
                 'organisation': [
-                  'CBSE'
+                  'sample_category1'
                 ],
                 'language': [
                   'English'
@@ -352,7 +352,7 @@ export const Response = {
                   'do_2130887113301852161639'
                 ],
                 'objectType': 'Content',
-                'appIcon': 'https://preprodall.blob.core.windows.net/ntp-content-preprod/content/do_2127921018695925761345/artifact/cbse_1561535872929.png',
+                'appIcon': 'https://preprodall.blob.core.windows.net/ntp-content-preprod/content/do_2127921018695925761345/artifact/sample-framework_1561535872929.png',
                 'gradeLevel': [
                   'Class 8',
                   'Class 9',
@@ -400,7 +400,7 @@ export const Response = {
                 ],
                 'status': 'Live',
                 'orgDetails': {
-                  'orgName': 'CBSE',
+                  'orgName': 'sample_category1',
                   'email': null
                 },
                 'code': 'org.sunbird.EHv1os.copy',
@@ -431,10 +431,10 @@ export const Response = {
                 'contentDisposition': 'inline',
                 'lastUpdatedOn': '2020-08-19T14:42:25.819+0000',
                 'licenseterms': 'I agree that by submitting / publishing this Content, I confirm that this Content complies with the Terms of Use and Content Policy and that I consent to publish it under the Creative Commons Framework. I have made sure that I do not violate copyright or privacy rights of others',
-                'originData': '{\'name\':\'Aryabhata Ganit Challenge\',\'copyType\':\'deep\',\'license\':\'CC BY 4.0\',\'organisation\':[\'CBSE\']}',
+                'originData': '{\'name\':\'Aryabhata Ganit Challenge\',\'copyType\':\'deep\',\'license\':\'CC BY 4.0\',\'organisation\':[\'sample_category1\']}',
                 'SYS_INTERNAL_LAST_UPDATED_ON': '2020-08-25T19:00:34.898+0000',
                 'dialcodeRequired': 'No',
-                'creator': 'CbseCreator',
+                'creator': 'sample-frameworkCreator',
                 'lastStatusChangedOn': '2020-08-19T14:42:26.146+0000',
                 'createdFor': [
                   '0128325322816552960'
@@ -465,7 +465,7 @@ export const Response = {
                 'ownershipType': [
                   'createdBy'
                 ],
-                'copyright': 'CBSE',
+                'copyright': 'sample_category1',
                 'keywords': [
                   'Quiz',
                   'Ganit',
@@ -477,7 +477,7 @@ export const Response = {
                 'channel': '0128325322816552960',
                 'downloadUrl': 'https://preprodall.blob.core.windows.net/ntp-content-preprod/ecar_files/do_2130887206273843201640/aryabhata-ganit-challenge_1597758638370_do_2130887206273843201640_3.0_spine.ecar',
                 'organisation': [
-                  'CBSE'
+                  'sample-framework'
                 ],
                 'language': [
                   'English'
@@ -498,7 +498,7 @@ export const Response = {
                   'do_2130887113301852161639'
                 ],
                 'objectType': 'Content',
-                'appIcon': 'https://preprodall.blob.core.windows.net/ntp-content-preprod/content/do_2127921018695925761345/artifact/cbse_1561535872929.png',
+                'appIcon': 'https://preprodall.blob.core.windows.net/ntp-content-preprod/content/do_2127921018695925761345/artifact/sample-framework_1561535872929.png',
                 'children': [
                   'do_2130887113301852161639',
                   'do_2130887380954972161690'
@@ -544,7 +544,7 @@ export const Response = {
                 ],
                 'status': 'Live',
                 'orgDetails': {
-                  'orgName': 'CBSE',
+                  'orgName': 'sample_category1',
                   'email': null
                 },
                 'code': 'org.sunbird.EHv1os',
@@ -577,7 +577,7 @@ export const Response = {
                 'licenseterms': 'I agree that by submitting / publishing this Content, I confirm that this Content complies with the Terms of Use and Content Policy and that I consent to publish it under the Creative Commons Framework. I have made sure that I do not violate copyright or privacy rights of others',
                 'SYS_INTERNAL_LAST_UPDATED_ON': '2020-08-20T19:00:32.613+0000',
                 'dialcodeRequired': 'No',
-                'creator': 'CbseCreator',
+                'creator': 'sample-frameworkCreator',
                 'lastStatusChangedOn': '2020-08-18T13:50:38.122+0000',
                 'createdFor': [
                   '0128325322816552960'
@@ -623,8 +623,8 @@ export const Response = {
     'content': [
       {
         'identifier': '0128325322816552960',
-        'orgName': 'CBSE',
-        'slug': 'cbse'
+        'orgName': 'sample_category1',
+        'slug': 'sample-framework'
       }
     ]
   },
@@ -765,7 +765,7 @@ export const Response = {
       'dataType': 'text',
       'name': 'Board',
       'label': 'Board',
-      'description': 'Education Board (Like MP Board, NCERT, etc)',
+      'description': 'Education Board (Like MP Board, sample_category1, etc)',
       'editable': true,
       'inputType': 'select',
       'required': false,
@@ -777,18 +777,18 @@ export const Response = {
       'index': 1,
       'range': [
         {
-          'identifier': 'ncf_board_ncert',
-          'code': 'ncert',
-          'name': 'NCERT',
+          'identifier': 'ncf_board_sample-framework',
+          'code': 'sample-framework',
+          'name': 'sample_category1',
           'description': '',
           'index': 2,
           'category': 'board',
           'status': 'Live'
         },
         {
-          'identifier': 'ncf_board_cbse',
-          'code': 'cbse',
-          'name': 'CBSE',
+          'identifier': 'ncf_board_sample-framework',
+          'code': 'sample-framework',
+          'name': 'sample_category1',
           'description': '',
           'index': 1,
           'category': 'board',
@@ -922,12 +922,12 @@ export const Response = {
   requestParam2: {
     source: 'web',
     name: 'AnonymousCourse',
-    filters: { subject: ['English'], board: 'CBSE', 'channel': '0123166367624478721' },
+    filters: { subject: ['English'], board: 'sample_category1', 'channel': '0123166367624478721' },
   },
   requestParam3: {
     source: 'web',
     name: 'AnonymousCourse',
-    filters: { subject: ['English'], board: ['NCERT', 'ICSE'] },
+    filters: { subject: ['English'], board: ['sample_category1', 'ICSE'] },
   },
   facetsList: {
     'gradeLevel': [

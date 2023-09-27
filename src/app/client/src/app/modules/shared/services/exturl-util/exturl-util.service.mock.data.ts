@@ -44,7 +44,7 @@ export const MockResponse = {
         ],
         'createdBy': '63b0870c-f370-4f96-842d-f6a7fa2db1df',
         'name': 'A5 ext link',
-        'board': 'CBSE',
+        'board': 'sample_category1',
         'status': 'Live',
         'resourceType': 'Practice'
     }

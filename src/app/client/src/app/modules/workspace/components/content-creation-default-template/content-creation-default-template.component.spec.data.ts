@@ -48,7 +48,7 @@ export const mockData = {
                         },
                         {
                             'code': 'board', 'dataType': 'text', 'name': 'Board', 'label': 'Board',
-                            'description': 'Education Board (Like MP Board, NCERT, etc)',
+                            'description': 'Education Board (Like MP Board, sample_category1, etc)',
                             'editable': true, 'placeholder': 'Board', 'inputType': 'select', 'required': false,
                             'displayProperty': 'Editable', 'visible': true,
                             'renderingHints': { 'semanticColumnWidth': 'six' }, 'index': 2,
@@ -136,8 +136,8 @@ export const mockData = {
                 'description': '', 'category': 'gradeLevel',
                 'status': 'Live'
             }],
-        'identifier': 'ncf_board_ncert',
-        'code': 'ncert', 'name': 'NCERT', 'description': '', 'index': 1, 'category': 'board', 'status': 'Live'
+        'identifier': 'ncf_board_sample-framework',
+        'code': 'sample-framework', 'name': 'sample_category1', 'description': '', 'index': 1, 'category': 'board', 'status': 'Live'
     },
 
     frameworkSuccess: {
@@ -201,11 +201,11 @@ export const mockData = {
                                 'identifier': 'ncf_gradelevel_grade5', 'code': 'grade5', 'name': 'Grade 5',
                                 'description': '', 'category': 'gradeLevel', 'status': 'Live'
                             }],
-                            'identifier': 'ncf_board_ncert', 'code': 'ncert', 'name': 'NCERT',
+                            'identifier': 'ncf_board_sample-framework', 'code': 'sample-framework', 'name': 'sample_category1',
                             'description': '', 'index': 1, 'category': 'board', 'status': 'Live'
                         },
                         {
-                            'identifier': 'ncf_board_cbse', 'code': 'cbse', 'name': 'CBSE', 'description': '',
+                            'identifier': 'ncf_board_sample-framework', 'code': 'sample-framework', 'name': 'sample_category1', 'description': '',
                             'index': 2, 'category': 'board', 'status': 'Live'
                         }, {
                             'identifier': 'ncf_board_icse',
@@ -530,7 +530,7 @@ export const mockData = {
         'dataType': 'text',
         'name': 'Board',
         'label': 'Board',
-        'description': 'Education Board (Like MP Board, NCERT, etc)',
+        'description': 'Education Board (Like MP Board, sample_category1, etc)',
         'editable': true,
         'placeholder': 'Board',
         'inputType': 'select',
@@ -572,7 +572,7 @@ export const mockData = {
         'dataType': 'text',
         'name': 'Board',
         'label': 'Board',
-        'description': 'Education Board (Like MP Board, NCERT, etc)',
+        'description': 'Education Board (Like MP Board, sample_category1, etc)',
         'editable': true,
         'placeholder': 'Board',
         'inputType': 'select',
@@ -609,7 +609,7 @@ export const mockData = {
         'depends': ['gradeLevel']
         },
         index: '1',
-        value: 'NCERT'
+        value: 'sample_category1'
     }
 };
 

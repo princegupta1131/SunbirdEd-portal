@@ -1928,7 +1928,7 @@ export const CourseHierarchyGetMockResponse = {
           'compatibilityLevel': 1,
           'name': 'Math for dummies',
           'usedByContent': [],
-          'board': 'NCERT',
+          'board': 'sample_category1',
           'status': 'Live',
           'contentCredits': [
             {
@@ -3875,7 +3875,7 @@ export const CourseHierarchyGetMockResponseFlagged = {
             'compatibilityLevel': 1,
             'name': 'Math for dummies',
             'usedByContent': [],
-            'board': 'NCERT',
+            'board': 'sample_category1',
             'status': 'Flagged'
         }
     }

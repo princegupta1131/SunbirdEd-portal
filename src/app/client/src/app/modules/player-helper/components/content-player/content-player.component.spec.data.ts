@@ -36,7 +36,7 @@ export const playerData = {
             artifactUrl: 'do_21260742513514086411607/1542779548981_do_21260742513514086411607.zip',
             audience: ['Learner'],
             baseDir: 'content/do_21260742513514086411607',
-            board: 'CBSE',
+            board: 'sample_category1',
             channel: '505c7c48ac6dc1edc9b08f21db5a571d',
             code: 'org.sunbird.oUF5Ea',
             compatibilityLevel: 2,

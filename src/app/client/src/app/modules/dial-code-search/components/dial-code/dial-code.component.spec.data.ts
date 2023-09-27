@@ -282,7 +282,7 @@ export const Response = {
             'image': 'https://ekstep-public-prod.s3-ap-south-1.amazonaws.com/content/do_312579855868370944110877/artifact/1n4jfaogvexvuuff6knjagpzmavlvdxk2.thumb.png',
             'medium': 'English',
             // tslint:disable-next-line:max-line-length
-            'metaData': { 'identifier': 'do_312579855868370944110877', 'mimeType': 'video/x-youtube', 'framework': 'ekstep_ncert_k-12', 'contentType': 'Resource' },
+            'metaData': { 'identifier': 'do_312579855868370944110877', 'mimeType': 'video/x-youtube', 'framework': 'ekstep_sample-framework_k-12', 'contentType': 'Resource' },
             'name': 'Jugs and Mugs_Bunny and Banno celebrate their Wedding Anniversary_2',
             'orgDetails': {},
             'rating': 3,

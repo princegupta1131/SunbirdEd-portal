@@ -95,7 +95,7 @@ export const Response = {
           ],
           'channel': '01329314824202649627',
           'organisation': [
-              'CBSE'
+              'sample_category1'
           ],
           'mimeType': 'application/vnd.ekstep.content-collection',
           'medium': [
@@ -122,11 +122,11 @@ export const Response = {
           'primaryCategory': 'Digital Textbook',
           'name': 'Question set offline book test',
           'contentType': 'TextBook',
-          'board': 'CBSE',
+          'board': 'sample_category1',
           'resourceType': 'Book',
           'orgDetails': {
               'email': null,
-              'orgName': 'CBSE'
+              'orgName': 'sample_category1'
           }
       }
       ],
@@ -214,7 +214,7 @@ export const Response = {
         'Worksheet',
         'Game'
       ],
-      'board': ['CBSE'],
+      'board': ['sample_category1'],
       'channel': '0123166367624478721'
     },
     'limit': 20,
@@ -236,7 +236,7 @@ export const Response = {
         'Worksheet',
         'Game'
       ],
-      'board': 'CBSE',
+      'board': 'sample_category1',
       'channel': '0123166367624478721'
     },
     'limit': 20,
@@ -420,7 +420,7 @@ export const Response = {
         'dataType': 'text',
         'name': 'Board',
         'label': 'Board',
-        'description': 'Education Board (Like MP Board, NCERT, etc)',
+        'description': 'Education Board (Like MP Board, sample_category1, etc)',
         'editable': true,
         'inputType': 'select',
         'required': false,
@@ -432,18 +432,18 @@ export const Response = {
         'index': 1,
         'range': [
           {
-            'identifier': 'ncf_board_ncert',
-            'code': 'ncert',
-            'name': 'NCERT',
+            'identifier': 'ncf_board_sample-framework',
+            'code': 'sample-framework',
+            'name': 'sample_category1',
             'description': '',
             'index': 2,
             'category': 'board',
             'status': 'Live'
           },
           {
-            'identifier': 'ncf_board_cbse',
-            'code': 'cbse',
-            'name': 'CBSE',
+            'identifier': 'ncf_board_sample-framework',
+            'code': 'sample-framework',
+            'name': 'sample_category1',
             'description': '',
             'index': 1,
             'category': 'board',
@@ -586,7 +586,7 @@ export const Response = {
       'image': 'https://ekstep-public-prod.s3-ap-south-1.amazonaws.com/content/do_312579855868370944110877/artifact/1n4jfaogvexvuuff6knjagpzmavlvdxk2.thumb.png',
       'medium': 'English',
       // tslint:disable-next-line:max-line-length
-      'metaData': {'identifier': 'do_312579855868370944110877', 'mimeType': 'video/x-youtube', 'framework': 'ekstep_ncert_k-12', 'contentType': 'Resource'},
+      'metaData': {'identifier': 'do_312579855868370944110877', 'mimeType': 'video/x-youtube', 'framework': 'ekstep_sample-framework_k-12', 'contentType': 'Resource'},
       'name': 'Jugs and Mugs_Bunny and Banno celebrate their Wedding Anniversary_2',
       'orgDetails': {},
       'rating': 3,
@@ -868,7 +868,7 @@ export const Response = {
             ],
             'channel': '01329314824202649627',
             'organisation': [
-                'CBSE'
+                'sample_category1'
             ],
             'mimeType': 'application/vnd.ekstep.content-collection',
             'pkgVersion': 1,
@@ -880,7 +880,7 @@ export const Response = {
             'resourceType': 'Course',
             'orgDetails': {
                 'email': null,
-                'orgName': 'CBSE'
+                'orgName': 'sample_category1'
             },
             'cardImg': 'https://sunbirdstagingpublic.blob.core.windows.net/sunbird-content-staging/content/do_21333061282832384011584/artifact/do_2133017041382768641708_1623743181065_icon5.thumb.png'
         },
@@ -924,7 +924,7 @@ export const Response = {
             ],
             'channel': '01329314824202649627',
             'organisation': [
-                'CBSE'
+                'sample_category1'
             ],
             'mimeType': 'application/vnd.ekstep.content-collection',
             'pkgVersion': 1,
@@ -936,7 +936,7 @@ export const Response = {
             'resourceType': 'Course',
             'orgDetails': {
                 'email': null,
-                'orgName': 'CBSE'
+                'orgName': 'sample_category1'
             },
             'cardImg': 'https://sunbirdstagingpublic.blob.core.windows.net/sunbird-content-staging/content/do_21330258165809971211522/artifact/do_2133017041382768641708_1623743181065_icon5.thumb.png'
         },
@@ -980,7 +980,7 @@ export const Response = {
             ],
             'channel': '01329314824202649627',
             'organisation': [
-                'CBSE'
+                'sample_category1'
             ],
             'mimeType': 'application/vnd.ekstep.content-collection',
             'pkgVersion': 1,
@@ -992,7 +992,7 @@ export const Response = {
             'resourceType': 'Course',
             'orgDetails': {
                 'email': null,
-                'orgName': 'CBSE'
+                'orgName': 'sample_category1'
             },
             'cardImg': 'https://sunbirdstagingpublic.blob.core.windows.net/sunbird-content-staging/content/do_21330188811612979211341/artifact/do_2133017041382768641708_1623743181065_icon5.thumb.png'
         },
@@ -1036,7 +1036,7 @@ export const Response = {
             ],
             'channel': '01329314824202649627',
             'organisation': [
-                'CBSE'
+                'sample_category1'
             ],
             'mimeType': 'application/vnd.ekstep.content-collection',
             'medium': [
@@ -1064,11 +1064,11 @@ export const Response = {
             'primaryCategory': 'Digital Textbook',
             'name': 'Publish2',
             'contentType': 'TextBook',
-            'board': 'CBSE',
+            'board': 'sample_category1',
             'resourceType': 'Book',
             'orgDetails': {
                 'email': null,
-                'orgName': 'CBSE'
+                'orgName': 'sample_category1'
             },
             'cardImg': 'https://sunbirdstagingpublic.blob.core.windows.net/sunbird-content-staging/content/do_21334212226890956813386/artifact/do_2133016737715240961616_1623739474410_pexels-photo-594364.thumb.jpeg'
         },
@@ -1133,7 +1133,7 @@ export const Response = {
             'channel': '01329314824202649627',
             'name': 'Audience:other',
             'organisation': [
-                'CBSE'
+                'sample_category1'
             ],
             'mimeType': 'application/vnd.ekstep.content-collection',
             'contentType': 'Course',
@@ -1142,7 +1142,7 @@ export const Response = {
             'resourceType': 'Course',
             'orgDetails': {
                 'email': null,
-                'orgName': 'CBSE'
+                'orgName': 'sample_category1'
             },
             'cardImg': 'assets/images/book.png'
         },

@@ -34,7 +34,7 @@ export const mockFormData = {
                         'renderingHints': { 'semanticColumnWidth': 'twelve' }, 'index': 1
                     }, {
                         'code': 'board', 'dataType': 'text', 'name': 'Board',
-                        'lable': 'Board', 'description': 'Education Board (Like MP Board, NCERT, etc)',
+                        'lable': 'Board', 'description': 'Education Board (Like MP Board, sample_category1, etc)',
                         'editable': true, 'placeholder': 'Board', 'inputType': 'select',
                         'required': false, 'displayProperty': 'Editable', 'visible': true,
                         'renderingHints': { 'semanticColumnWidth': 'six' }, 'index': 2,

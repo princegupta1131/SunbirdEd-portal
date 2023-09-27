@@ -392,7 +392,7 @@ export const Response = {
                     'createdBy': '874ed8a5-782e-4f6c-8f36-e0288455901e',
                     'compatibilityLevel': 2,
                     'IL_UNIQUE_ID': 'do_112484375073890304147',
-                    'board': 'CBSE',
+                    'board': 'sample_category1',
                     'resourceType': 'Story',
                     'node_id': 35015
                 },
@@ -554,7 +554,7 @@ export const Response = {
     },
     finalDeclarationObjStructure: [
         {
-            'label': 'NCERT type',
+            'label': 'sample_category1 type',
             'value': 'Kendria Vidhyalaya 1',
             'code': 'type',
             'index': 1
@@ -661,7 +661,7 @@ export const Response = {
                         'index': 2
                     },
                     {
-                        'label': 'CBSE',
+                        'label': 'sample_category1',
                         'value': '013016492159606784174',
                         'index': 3
                     }

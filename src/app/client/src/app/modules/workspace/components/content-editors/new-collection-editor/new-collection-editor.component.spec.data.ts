@@ -104,7 +104,7 @@ export const mockRes = {
                 'languageCode': [
                     'en'
                 ],
-                'framework': 'ekstep_ncert_k-12',
+                'framework': 'ekstep_sample-framework_k-12',
                 'createdBy': '5a587cc1-e018-4859-a0a8-e842650b9d64',
                 'status': 'Draft'
             }

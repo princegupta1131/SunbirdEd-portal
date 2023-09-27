@@ -61,7 +61,7 @@ export const coursePlayerMockData = {
       'copyType': 'deep',
       'license': 'CC BY 4.0',
       'organisation': [
-        'CBSE ORG'
+        'sample_category1 ORG'
       ]
     },
     'c_sunbird_dev_private_batch_count': 0,
@@ -75,7 +75,7 @@ export const coursePlayerMockData = {
           'createdBy'
         ],
         'parent': 'do_1130292569979781121111',
-        'copyright': 'CBSE ORG',
+        'copyright': 'sample_category1 ORG',
         'code': 'do_1130292569984860161117',
         'channel': 'b00bc992ef25f1a9a8d63291e20efc8d',
         'language': [
@@ -255,7 +255,7 @@ export const coursePlayerMockData = {
             'lastSubmittedOn': '2020-03-09T08:43:06.468+0000',
             'createdBy': '8454cb21-3ce9-4e30-85b5-fade097880d8',
             'compatibilityLevel': 2,
-            'board': 'CBSE',
+            'board': 'sample_category1',
             'resourceType': 'Learn',
             'index': 1,
             'depth': 2,
@@ -391,7 +391,7 @@ export const coursePlayerMockData = {
         'versionKey': '1590485473448',
         'license': 'CC BY 4.0',
         'idealScreenDensity': 'hdpi',
-        'framework': 'cbse-tpd',
+        'framework': 'sample-framework',
         'depth': 1,
         'name': 'Unit 1',
         'topic': [],
@@ -412,7 +412,7 @@ export const coursePlayerMockData = {
           'createdBy'
         ],
         'parent': 'do_1130292569979781121111',
-        'copyright': 'CBSE ORG',
+        'copyright': 'sample_category1 ORG',
         'code': '950f3ee8-0c49-45e3-b250-c8df4358c97e',
         'channel': 'b00bc992ef25f1a9a8d63291e20efc8d',
         'language': [
@@ -428,7 +428,7 @@ export const coursePlayerMockData = {
               'createdBy'
             ],
             'parent': 'do_1130292569984778241115',
-            'copyright': 'CBSE ORG',
+            'copyright': 'sample_category1 ORG',
             'code': '3493b5ed-c497-4b24-a696-dba78c921d34',
             'channel': 'b00bc992ef25f1a9a8d63291e20efc8d',
             'language': [
@@ -637,7 +637,7 @@ export const coursePlayerMockData = {
             'versionKey': '1590485473446',
             'license': 'CC BY 4.0',
             'idealScreenDensity': 'hdpi',
-            'framework': 'cbse-tpd',
+            'framework': 'sample-framework-tpd',
             'depth': 2,
             'name': '2.1',
             'status': 'Live',
@@ -657,7 +657,7 @@ export const coursePlayerMockData = {
               'createdBy'
             ],
             'parent': 'do_1130292569984778241115',
-            'copyright': 'CBSE ORG',
+            'copyright': 'sample_category1 ORG',
             'code': 'af4a1743-fb47-4667-8ed0-d28acc9e63e8',
             'channel': 'b00bc992ef25f1a9a8d63291e20efc8d',
             'language': [
@@ -750,7 +750,7 @@ export const coursePlayerMockData = {
                 'lastSubmittedOn': '2019-06-26T13:10:11.997+0000',
                 'createdBy': '874ed8a5-782e-4f6c-8f36-e0288455901e',
                 'compatibilityLevel': 1,
-                'board': 'CBSE',
+                'board': 'sample_category1',
                 'resourceType': 'Learn',
                 'index': 1,
                 'depth': 3,
@@ -838,7 +838,7 @@ export const coursePlayerMockData = {
                 'lastSubmittedOn': '2019-06-26T05:58:33.672+0000',
                 'createdBy': '874ed8a5-782e-4f6c-8f36-e0288455901e',
                 'compatibilityLevel': 1,
-                'board': 'CBSE',
+                'board': 'sample_category1',
                 'resourceType': 'Learn',
                 'index': 2,
                 'depth': 3,
@@ -867,7 +867,7 @@ export const coursePlayerMockData = {
             'versionKey': '1590485473449',
             'license': 'CC BY 4.0',
             'idealScreenDensity': 'hdpi',
-            'framework': 'cbse-tpd',
+            'framework': 'sample-framework-tpd',
             'depth': 2,
             'name': '2.2',
             'status': 'Live',
@@ -905,7 +905,7 @@ export const coursePlayerMockData = {
         'versionKey': '1590485473447',
         'license': 'CC BY 4.0',
         'idealScreenDensity': 'hdpi',
-        'framework': 'cbse-tpd',
+        'framework': 'sample-framework-tpd',
         'depth': 1,
         'name': 'Unit 2',
         'status': 'Live',
@@ -1273,7 +1273,7 @@ export const coursePlayerMockData = {
     'medium': [
       'English'
     ],
-    'framework': 'cbse-tpd',
+    'framework': 'sample-framework-tpd',
     'posterImage': 'https://sunbirddev.blob.core.windows.net/sunbird-content-dev/content/do_112995276604129280123/artifact/ashoka_chakra.png',
     'creator': 'Mentor First User',
     'totalCompressedSize': 19797763,
@@ -1296,7 +1296,7 @@ export const coursePlayerMockData = {
     'language': [
       'English'
     ],
-    'board': 'CBSE',
+    'board': 'sample_category1',
     'ageGroup': [
       '5-6'
     ],

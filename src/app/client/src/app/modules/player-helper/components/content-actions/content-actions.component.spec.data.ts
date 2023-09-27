@@ -62,7 +62,7 @@ export const actionsData = {
         artifactUrl: 'do_31275241153060864018150/1556698449702_do_31275241153060864018150.zip',
         audience: ['Learner'],
         baseDir: 'content/do_31275241153060864018150',
-        board: 'cbse',
+        board: 'sample-framework',
         channel: 'in.ekstep',
         contentType: 'Resource',
         desktopAppMetadata: {

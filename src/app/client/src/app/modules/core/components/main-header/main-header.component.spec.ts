@@ -210,7 +210,7 @@ xdescribe('MainHeaderComponent', () => {
   });
 
   it('All query param should be removed except key and language', () => {
-    component.queryParam = { 'board': 'NCERT', 'medium': 'English' };
+    component.queryParam = { 'board': 'sample_category1', 'medium': 'English' };
     component.onEnter('test');
     expect(component.queryParam).toEqual({ 'key': 'test' });
   });
@@ -405,7 +405,7 @@ xdescribe('MainHeaderComponent', () => {
     // @ts-ignore
     mockUserService.loggedIn = true;
     jest.spyOn(component, 'setUserPreferences').mockImplementation();
-    const event = { board: ['CBSE'], medium: ['English'], gradeLevel: ['Class 1'], subject: ['English'], id: ['tn_k-12_5'] };
+    const event = { board: ['sample_category1'], medium: ['English'], gradeLevel: ['Class 1'], subject: ['English'], id: ['tn_k-12_5'] };
     component.userPreference = { framework: event };
     component.setUserPreferences();
     expect(component.setUserPreferences).toHaveBeenCalled();
@@ -417,7 +417,7 @@ xdescribe('MainHeaderComponent', () => {
     // @ts-ignore
     mockUserService.loggedIn = false;
     jest.spyOn(component, 'setUserPreferences').mockImplementation();
-    const event = { board: ['CBSE'], medium: ['English'], gradeLevel: ['Class 1'], subject: ['English'], id: 'tn_k-12_5' };
+    const event = { board: ['sample_category1'], medium: ['English'], gradeLevel: ['Class 1'], subject: ['English'], id: 'tn_k-12_5' };
     jest.spyOn(mockUserService, 'getGuestUser').mockReturnValue(of({ framework: event }));
     component.setUserPreferences();
     expect(component.setUserPreferences).toHaveBeenCalled();

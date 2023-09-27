@@ -251,10 +251,9 @@ export class ExploreContentComponent implements OnInit, OnDestroy, AfterViewInit
     if (this.frameworkId) {
       option.params.framework = this.frameworkId;
     }
-    // Replacing cbse/ncert value with cbse
-    const cbseNcertExists = [_.get(filters, 'board[0]'), _.get(filters, 'board'), _.get(filters, 'se_boards[0]'), _.get(filters, 'se_boards')].some(board => _.toLower(board) === 'cbse/ncert');
-    if (cbseNcertExists) {
-      option.filters.se_boards = ['CBSE'];
+    const sampleCategoryExists = [_.get(filters, 'board[0]'), _.get(filters, 'board'), _.get(filters, 'se_boards[0]'), _.get(filters, 'se_boards')].some(board => _.toLower(board).includes('/'));
+    if (sampleCategoryExists) {
+      option.filters.se_boards =  option.filters.se_boards.split('/')[0].trim();
     }
     this.searchService.contentSearch(option)
       .pipe(

@@ -84,14 +84,14 @@ describe('ContentSearchService', () => {
   });
 
   it('should be  call initialize', () => {
-    const mockData = { channelId: '01285019302823526477', custodianOrg: false, defaultBoard: 'CBSE' };
+    const mockData = { channelId: '01285019302823526477', custodianOrg: false, defaultBoard: 'sample_category1' };
     jest.spyOn(contentSearchService, 'initialize');
     contentSearchService.initialize(mockData.channelId, mockData.custodianOrg, mockData.defaultBoard);
     expect(contentSearchService.initialize).toHaveBeenCalledWith(mockData.channelId, mockData.custodianOrg, mockData.defaultBoard);
   });
 
   it('should be  call initialize for custodian org', () => {
-    const mockData = { channelId: '01285019302823526477', custodianOrg: true, defaultBoard: 'CBSE' };
+    const mockData = { channelId: '01285019302823526477', custodianOrg: true, defaultBoard: 'sample_category1' };
     jest.spyOn(contentSearchService, 'initialize');
     contentSearchService.initialize(mockData.channelId, mockData.custodianOrg, mockData.defaultBoard);
     expect(contentSearchService.initialize).toHaveBeenCalledWith(mockData.channelId, mockData.custodianOrg, mockData.defaultBoard);

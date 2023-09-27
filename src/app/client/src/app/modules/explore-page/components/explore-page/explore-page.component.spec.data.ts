@@ -499,7 +499,7 @@ export const RESPONSE = {
       'dataType': 'text',
       'name': 'Board',
       'label': 'Board',
-      'description': 'Education Board (Like MP Board, NCERT, etc)',
+      'description': 'Education Board (Like MP Board, sample_category1, etc)',
       'editable': true,
       'inputType': 'select',
       'required': false,
@@ -511,18 +511,18 @@ export const RESPONSE = {
       'index': 1,
       'range': [
         {
-          'identifier': 'ncf_board_ncert',
-          'code': 'ncert',
-          'name': 'NCERT',
+          'identifier': 'ncf_board_sample-framework',
+          'code': 'sample-framework',
+          'name': 'sample_category1',
           'description': '',
           'index': 2,
           'category': 'board',
           'status': 'Live'
         },
         {
-          'identifier': 'ncf_board_cbse',
-          'code': 'cbse',
-          'name': 'CBSE',
+          'identifier': 'ncf_board_sample-framework',
+          'code': 'sample-framework',
+          'name': 'sample_category1',
           'description': '',
           'index': 1,
           'category': 'board',
@@ -659,7 +659,7 @@ export const RESPONSE = {
   requestParam2: {
     source: 'web',
     name: 'Explore',
-    filters: { subject: ['English'], board: 'CBSE', 'channel': '0123166367624478721' },
+    filters: { subject: ['English'], board: 'sample_category1', 'channel': '0123166367624478721' },
     softConstraints: { badgeAssertions: 98, board: 99, channel: 100 },
     mode: 'soft',
     exists: []
@@ -667,7 +667,7 @@ export const RESPONSE = {
   requestParam3: {
     source: 'web',
     name: 'Explore',
-    filters: { subject: ['English'], board: ['NCERT', 'ICSE'], 'channel': '0123166367624478721' },
+    filters: { subject: ['English'], board: ['sample_category1', 'ICSE'], 'channel': '0123166367624478721' },
     softConstraints: { badgeAssertions: 98, board: 99, channel: 100 },
     mode: 'soft',
     exists: []
@@ -689,7 +689,7 @@ export const RESPONSE = {
       'image': 'https://ekstep-public-prod.s3-ap-south-1.amazonaws.com/content/do_312579855868370944110877/artifact/1n4jfaogvexvuuff6knjagpzmavlvdxk2.thumb.png',
       'medium': 'English',
       // tslint:disable-next-line:max-line-length
-      'metaData': { 'identifier': 'do_312579855868370944110877', 'mimeType': 'video/x-youtube', 'framework': 'ekstep_ncert_k-12', 'contentType': 'Resource' },
+      'metaData': { 'identifier': 'do_312579855868370944110877', 'mimeType': 'video/x-youtube', 'framework': 'ekstep_sample-framework_k-12', 'contentType': 'Resource' },
       'name': 'Jugs and Mugs_Bunny and Banno celebrate their Wedding Anniversary_2',
       'orgDetails': {},
       'rating': 3,
@@ -1392,7 +1392,7 @@ export const RESPONSE = {
           'ownershipType': [
             'createdBy'
           ],
-          'copyright': 'PINUT, NCERT, United States',
+          'copyright': 'PINUT, sample_category1, United States',
           'keywords': [
             'koua',
             'pyasa',
@@ -1421,10 +1421,10 @@ export const RESPONSE = {
           'subject': 'Mathematics',
           'channel': '0125196778210263043',
           // tslint:disable-next-line:max-line-length
-          'downloadUrl': 'https://ntpstagingall.blob.core.windows.net/ntp-content-staging/ecar_files/do_21291536190681907211/test-ncert-book_1576665058611_do_21291536190681907211_3.0_spine.ecar',
+          'downloadUrl': 'https://ntpstagingall.blob.core.windows.net/ntp-content-staging/ecar_files/do_21291536190681907211/test-sample-framework-book_1576665058611_do_21291536190681907211_3.0_spine.ecar',
           'organisation': [
             'PINUT',
-            'NCERT',
+            'sample_category1',
             'United States'
           ],
           'language': [
@@ -1434,12 +1434,12 @@ export const RESPONSE = {
           'variants': {
             'online': {
               // tslint:disable-next-line:max-line-length
-              'ecarUrl': 'https://ntpstagingall.blob.core.windows.net/ntp-content-staging/ecar_files/do_21291536190681907211/test-ncert-book_1576665058688_do_21291536190681907211_3.0_online.ecar',
+              'ecarUrl': 'https://ntpstagingall.blob.core.windows.net/ntp-content-staging/ecar_files/do_21291536190681907211/test-sample-framework-book_1576665058688_do_21291536190681907211_3.0_online.ecar',
               'size': 5293
             },
             'spine': {
               // tslint:disable-next-line:max-line-length
-              'ecarUrl': 'https://ntpstagingall.blob.core.windows.net/ntp-content-staging/ecar_files/do_21291536190681907211/test-ncert-book_1576665058611_do_21291536190681907211_3.0_spine.ecar',
+              'ecarUrl': 'https://ntpstagingall.blob.core.windows.net/ntp-content-staging/ecar_files/do_21291536190681907211/test-sample-framework-book_1576665058611_do_21291536190681907211_3.0_spine.ecar',
               'size': 53792
             }
           },
@@ -1496,7 +1496,7 @@ export const RESPONSE = {
           'domain': [
             'literacy'
           ],
-          'name': 'Test ncert book',
+          'name': 'Test sample-framework book',
           'status': 'Live',
           'code': 'org.sunbird.NaHNzV',
           'description': 'Enter description for TextBook',
@@ -1532,7 +1532,7 @@ export const RESPONSE = {
           'dialcodes': [
             '0759CH17'
           ],
-          's3Key': 'ecar_files/do_21291536190681907211/test-ncert-book_1576665058611_do_21291536190681907211_3.0_spine.ecar',
+          's3Key': 'ecar_files/do_21291536190681907211/test-sample-framework-book_1576665058611_do_21291536190681907211_3.0_spine.ecar',
           'lastSubmittedOn': '2019-12-17T12:39:02.573+0000',
           'createdBy': 'db57c107-9f77-4730-9b0c-24b240ae5b87',
           'compatibilityLevel': 1,
@@ -1543,7 +1543,7 @@ export const RESPONSE = {
           'node_id': 520783,
           'orgDetails': {
             'email': null,
-            'orgName': 'NCERT'
+            'orgName': 'sample_category1'
           },
           // tslint:disable-next-line:max-line-length
           'cardImg': 'https://ntpstagingall.blob.core.windows.net/ntp-content-staging/content/do_21291536190681907211/artifact/download-1_1572434951636.thumb.png'
@@ -1926,7 +1926,7 @@ export const RESPONSE = {
         'groupByKey': 'subject',
         'defaultFilters': {
           'board': [
-            'CBSE'
+            'sample_category1'
           ],
           'gradeLevel': [
             'Class 10'
@@ -2067,8 +2067,8 @@ export const RESPONSE = {
         },
         {
           'index': 6,
-          'title': 'frmelmnts.lbl.fromncert',
-          'defaultTitle': 'From NCERT',
+          'title': 'frmelmnts.lbl.fromsample-framework',
+          'defaultTitle': 'From sample_category1',
           'desc': 'Section for Searched contents',
           'facetKey': 'search',
           'isEnabled': true,
@@ -2429,7 +2429,7 @@ export const RESPONSE = {
       'groupByKey': 'subject',
       'defaultFilters': {
         'board': [
-          'CBSE'
+          'sample_category1'
         ],
         'gradeLevel': [
           'Class 10'
@@ -2645,27 +2645,27 @@ export const RESPONSE = {
         'data': [
           {
             'index': 0,
-            'name': 'CBSE',
-            'value': 'ekstep_ncert_k-12',
+            'name': 'sample_category1',
+            'value': 'ekstep_sample-framework_k-12',
             'searchCriteria': {
               'facets': [
                 'board'
               ],
               'board': [
-                'CBSE'
+                'sample_category1'
               ]
             }
           },
           {
             'index': 1,
-            'name': 'IGOT-Health',
-            'value': 'igot_health',
+            'name': 'slugForSampleChannel',
+            'value': 'slugForSampleChannel',
             'searchCriteria': {
               'facets': [
                 'board'
               ],
               'board': [
-                'IGOT-Health'
+                'slugForSampleChannel'
               ]
             }
           },
@@ -3118,42 +3118,42 @@ export const RESPONSE = {
           'infiniteCard': false,
           'colorMapping': [],
           'icons': {
-            'ekstep_ncert_k-12': 'https://diksha.gov.in/cbse/cbse-logo.png',
-            'igot_health': 'https://diksha.gov.in/igot/logo.png',
-            'ar_k-12': 'https://diksha.gov.in/ar/logo.png',
-            'ap_k-12': 'https://diksha.gov.in/ap/logo.png',
-            'as_k-12': 'https://diksha.gov.in/as/logo.png',
-            'br_k-12': 'https://diksha.gov.in/br/logo.png',
-            'ch_k-12': 'https://diksha.gov.in/logo.png',
-            'cg_k-12': 'https://diksha.gov.in/cg/logo.png',
-            'dl_k-12': 'https://diksha.gov.in/dl/logo.png',
-            'ga_k-12': 'https://diksha.gov.in/ga/logo.png',
-            'gj_k-12': 'https://diksha.gov.in/gj/logo.png',
-            'hr_k-12': 'https://diksha.gov.in/hr/logo.png',
-            'hp_k-12': 'https://diksha.gov.in/logo.png',
-            'jk_k-12': 'https://diksha.gov.in/jk/logo.png',
-            'jh_k-12': 'https://diksha.gov.in/jh/logo.png',
-            'ka_k-12': 'https://diksha.gov.in/ka/appLogo.png',
-            'kl_k-12': 'https://diksha.gov.in/logo.png',
-            'mp_k-12': 'https://diksha.gov.in/mp/logo.png',
-            'mh_k-12_1': 'https://diksha.gov.in/mh/logo.png',
-            'mn_k-12': 'https://diksha.gov.in/mn/appLogo.png',
-            'ml_k-12': 'https://diksha.gov.in/ml/logo.png',
-            'mz_k-12': 'https://diksha.gov.in/mz/logo.png',
-            'nl_k-12': 'https://diksha.gov.in/nl/logo.png',
-            'od_k-12': 'https://diksha.gov.in/od/appLogo.png',
-            'pb_k-12': 'https://diksha.gov.in/pb/appLogo.png',
-            'rj_k-12': 'https://diksha.gov.in/rj/appLogo.png',
-            'sk_k-12_1': 'https://diksha.gov.in/sk/logo.png',
-            'tn_k-12_5': 'https://diksha.gov.in/tn/appLogo.png',
-            'ts_k-12': 'https://diksha.gov.in/ts/logo.png',
-            'tp_k-12': 'https://diksha.gov.in/logo.png',
-            'up_k-12': 'https://diksha.gov.in/up/appLogo.png',
-            'uk_k-12': 'https://diksha.gov.in/logo.png',
-            'an_k-12': 'https://diksha.gov.in/an/logo.png',
-            'dd_k-12': 'https://diksha.gov.in/dd/appLogo.png',
-            'ld_k-12': 'https://diksha.gov.in/ld/appLogo.png',
-            'py_k-12': 'https://diksha.gov.in/py/appLogo.png',
+            'ekstep_sample-framework_k-12': 'https://sunbird.gov.in/sample-framework/sample-framework-logo.png',
+            'slugForSampleChannel': 'https://sunbird.gov.in/sample_channel/logo.png',
+            'ar_k-12': 'https://sunbird.gov.in/ar/logo.png',
+            'ap_k-12': 'https://sunbird.gov.in/ap/logo.png',
+            'as_k-12': 'https://sunbird.gov.in/as/logo.png',
+            'br_k-12': 'https://sunbird.gov.in/br/logo.png',
+            'ch_k-12': 'https://sunbird.gov.in/logo.png',
+            'cg_k-12': 'https://sunbird.gov.in/cg/logo.png',
+            'dl_k-12': 'https://sunbird.gov.in/dl/logo.png',
+            'ga_k-12': 'https://sunbird.gov.in/ga/logo.png',
+            'gj_k-12': 'https://sunbird.gov.in/gj/logo.png',
+            'hr_k-12': 'https://sunbird.gov.in/hr/logo.png',
+            'hp_k-12': 'https://sunbird.gov.in/logo.png',
+            'jk_k-12': 'https://sunbird.gov.in/jk/logo.png',
+            'jh_k-12': 'https://sunbird.gov.in/jh/logo.png',
+            'ka_k-12': 'https://sunbird.gov.in/ka/appLogo.png',
+            'kl_k-12': 'https://sunbird.gov.in/logo.png',
+            'mp_k-12': 'https://sunbird.gov.in/mp/logo.png',
+            'mh_k-12_1': 'https://sunbird.gov.in/mh/logo.png',
+            'mn_k-12': 'https://sunbird.gov.in/mn/appLogo.png',
+            'ml_k-12': 'https://sunbird.gov.in/ml/logo.png',
+            'mz_k-12': 'https://sunbird.gov.in/mz/logo.png',
+            'nl_k-12': 'https://sunbird.gov.in/nl/logo.png',
+            'od_k-12': 'https://sunbird.gov.in/od/appLogo.png',
+            'pb_k-12': 'https://sunbird.gov.in/pb/appLogo.png',
+            'rj_k-12': 'https://sunbird.gov.in/rj/appLogo.png',
+            'sk_k-12_1': 'https://sunbird.gov.in/sk/logo.png',
+            'tn_k-12_5': 'https://sunbird.gov.in/tn/appLogo.png',
+            'ts_k-12': 'https://sunbird.gov.in/ts/logo.png',
+            'tp_k-12': 'https://sunbird.gov.in/logo.png',
+            'up_k-12': 'https://sunbird.gov.in/up/appLogo.png',
+            'uk_k-12': 'https://sunbird.gov.in/logo.png',
+            'an_k-12': 'https://sunbird.gov.in/an/logo.png',
+            'dd_k-12': 'https://sunbird.gov.in/dd/appLogo.png',
+            'ld_k-12': 'https://sunbird.gov.in/ld/appLogo.png',
+            'py_k-12': 'https://sunbird.gov.in/py/appLogo.png',
             'default': 'assets/images/default_circle.png'
           }
         },

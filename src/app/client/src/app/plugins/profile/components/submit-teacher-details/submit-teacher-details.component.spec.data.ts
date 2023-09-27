@@ -569,7 +569,7 @@ export const mockRes = {
           'index': 1
         },
         {
-          'label': 'CBSE',
+          'label': 'sample_category1',
           'value': '013016492159606784174',
           'index': 3
         }

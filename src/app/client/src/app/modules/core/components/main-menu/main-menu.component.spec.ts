@@ -131,14 +131,14 @@ describe('MainMenuComponent', () => {
     expect(component).toBeTruthy();
   });
   it('should call updateHrefPath with url and convert explore-course into learn', () => {
-    const url = 'https://localhost:3000/explore-course?board=CBSE';
+    const url = 'https://localhost:3000/explore-course?board=sample_category1';
     component.updateHrefPath(url);
-    expect(component.hrefPath).toBe('https://localhost:3000/learn?board=CBSE');
+    expect(component.hrefPath).toBe('https://localhost:3000/learn?board=sample_category1');
   });
   it('should call updateHrefPath with url and convert explore into resources', () => {
-    const url = 'https://localhost:3000/explore?board=CBSE';
+    const url = 'https://localhost:3000/explore?board=sample_category1';
     component.updateHrefPath(url);
-    expect(component.hrefPath).toBe('https://localhost:3000/resources?board=CBSE');
+    expect(component.hrefPath).toBe('https://localhost:3000/resources?board=sample_category1');
   });
   it('should call updateHrefPath with url and convert play into resources', () => {
     const url = '/play/content/do_2134696122632519681670?contentType=eTextBook';

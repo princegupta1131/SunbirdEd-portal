@@ -165,7 +165,7 @@ describe('UserService', () => {
 
   it('should call getAnonymousUserPreference', () => {
     jest.spyOn(mockPublicDataService, 'post').mockImplementation(() => {
-      return of({ result: { board: 'CBSE' } }) as any
+      return of({ result: { board: 'sample_category1' } }) as any
     }) as any;
     jest.spyOn(mockPublicDataService, 'get').mockImplementation(() => {
       return of() as any
@@ -177,7 +177,7 @@ describe('UserService', () => {
 
   it('should call updateAnonymousUserDetails', () => {
     jest.spyOn(mockPublicDataService, 'post').mockImplementation(() => {
-      return of({ result: { board: 'CBSE' } }) as any
+      return of({ result: { board: 'sample_category1' } }) as any
     }) as any;
     userService.updateAnonymousUserDetails({});
     expect(mockPublicDataService.post).toHaveBeenCalled();
@@ -185,7 +185,7 @@ describe('UserService', () => {
 
   it('should call createAnonymousUser', () => {
     jest.spyOn(mockPublicDataService, 'post').mockImplementation(() => {
-      return of({ result: { board: 'CBSE' } }) as any
+      return of({ result: { board: 'sample_category1' } }) as any
     }) as any;
     userService.createAnonymousUser({});
     expect(mockPublicDataService.post).toHaveBeenCalled();

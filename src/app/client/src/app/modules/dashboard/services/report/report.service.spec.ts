@@ -463,15 +463,15 @@ describe('ReportService', () => {
 
   it('should get materializedChildRows for known parameters', () => {
     const input = [{ isParameterized: true, children: [], parameters: ['$board'], reportid: '123' }];
-    jest.spyOn(reportService, 'getParameterValues').mockReturnValue({ masterData: () => of(['CBSE']) } as any);
-    jest.spyOn(reportService, 'getParameterFromHash').mockReturnValue('NCERT');
+    jest.spyOn(reportService, 'getParameterValues').mockReturnValue({ masterData: () => of(['sample_category1']) } as any);
+    jest.spyOn(reportService, 'getParameterFromHash').mockReturnValue('sample_category1');
     reportService['getMaterializedChildRows'](input).subscribe(res => {
       expect(res).toBeDefined();
       expect(res.length).toBe(1);
       expect(reportService.getParameterValues).toHaveBeenCalled();
       expect(res).toEqual([{
         isParameterized: true, parameters: ['$board'], reportid: '123', children: [{
-          label: 'CBSE', hashed_val: 'Q0JTRQ==', status: 'draft', reportid: '123', materialize: true
+          label: 'sample_category1', hashed_val: 'Q0JTRQ==', status: 'draft', reportid: '123', materialize: true
         }]
       }]);
     });
@@ -514,7 +514,7 @@ describe('ReportService', () => {
         result: {
           framework: {
             categories: [
-              { code: 'board', terms: [{ name: 'CBSE' }] }]
+              { code: 'board', terms: [{ name: 'sample_category1' }] }]
           }
         }
       }) as any);
@@ -528,7 +528,7 @@ describe('ReportService', () => {
     it('should check for state parameter', (done) => {
       jest.spyOn(mockUserService, 'userProfile',).mockReturnValue({
         rootOrg: { slug: 'sunbird' },
-        framework: { board: ['CBSE'] }, userLocations: [{ type: 'state', name: 'Goa' }]
+        framework: { board: ['sample_category1'] }, userLocations: [{ type: 'state', name: 'Goa' }]
       });
       const { value, masterData } = reportService.getParameterValues('$state');
       masterData().subscribe(res => {
@@ -562,7 +562,7 @@ describe('ReportService', () => {
     const hash = 'c3VuYmlyZA==';
     const result = reportService.getParameterizedFiles(files, hash);
     expect(result).toEqual([
-      { downloadUrl: '/report/NCERT/abc.json' },
+      { downloadUrl: '/report/sample_category1/abc.json' },
       { downloadUrl: '/report/HE/abc.json' }
     ]);
   });

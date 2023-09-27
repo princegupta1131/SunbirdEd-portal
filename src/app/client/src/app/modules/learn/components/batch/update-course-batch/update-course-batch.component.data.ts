@@ -1193,7 +1193,7 @@ export const getUserDetails = {
               'createdDate': '2017-08-08 11:53:47:814+0000',
               'isDeleted': null,
               'createdBy': '80736bb1-9c64-488f-9902-d6fbfcd3e7ed',
-              'boardOrUniversity': 'CBSE',
+              'boardOrUniversity': 'sample_category1',
               'grade': null,
               'percentage': null,
               'name': 'Delhi Public School',

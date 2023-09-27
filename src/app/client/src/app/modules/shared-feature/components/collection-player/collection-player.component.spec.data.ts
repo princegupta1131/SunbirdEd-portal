@@ -522,7 +522,7 @@ export const CollectionHierarchyGetMockResponse = {
             'compatibilityLevel': 1,
             'name': 'Math for dummies',
             'usedByContent': [],
-            'board': 'NCERT',
+            'board': 'sample_category1',
             'status': 'Draft'
         }
     }
@@ -642,7 +642,7 @@ export const collectionTree = {
                         'lastSubmittedOn': '2018-05-25T06:22:18.386+0000',
                         'createdBy': '63b0870c-f370-4f96-842d-f6a7fa2db1df',
                         'compatibilityLevel': 4,
-                        'board': 'CBSE',
+                        'board': 'sample_category1',
                         'resourceType': 'Practice'
                     }
                 ],
@@ -726,7 +726,7 @@ export const collectionTree = {
         'leafNodesCount': 1,
         'compatibilityLevel': 4,
         'c_Sunbird_Dev_private_batch_count': 2,
-        'board': 'CBSE'
+        'board': 'sample_category1'
     };
 
 export const telemetryErrorData = {

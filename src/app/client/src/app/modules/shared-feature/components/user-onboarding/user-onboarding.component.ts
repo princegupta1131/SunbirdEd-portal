@@ -29,7 +29,6 @@ export class UserOnboardingComponent implements OnInit {
   get Stage() { return Stage; }
   stage;
   tenantInfo: ITenantData;
-  isIGotSlug = false;
   private unsubscribe$ = new Subject<void>();
   isGuestUser: boolean;
 
@@ -56,7 +55,7 @@ export class UserOnboardingComponent implements OnInit {
           const orgDetailsFromSlug = this.cacheService.get('orgDetailsFromSlug');
 
           // /* istanbul ignore else */
-          // if (_.get(orgDetailsFromSlug, 'slug') === this.tenantService.slugForIgot) {
+          // if (_.get(orgDetailsFromSlug, 'slug') === this.tenantService.slugForSampleChannel) {
           //   this.tenantInfo.titleName = _.upperCase(orgDetailsFromSlug.slug);
           //   this.stage = Stage.LOCATION_SELECTION;
           // }

@@ -373,9 +373,9 @@ export const ResponseData = {
     lastLoginTime: 0,
     createdDate: '2021-08-09 10:21:47:425+0000',
     framework: {
-      board: ['CBSE'],
+      board: ['sample_category1'],
       gradeLevel: ['Class 1'],
-      id: ['ekstep_ncert_k-12'],
+      id: ['ekstep_sample-framework_k-12'],
       medium: ['English'],
       subject: [],
     },
@@ -435,7 +435,7 @@ export const metaData = {
 };
 
 export const categoryData = {
-  CBSE: {
+  sample_category1: {
     teacher: [
       {
         name: 'observation',

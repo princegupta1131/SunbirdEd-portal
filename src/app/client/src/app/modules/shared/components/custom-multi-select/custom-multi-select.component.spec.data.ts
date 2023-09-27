@@ -4,7 +4,7 @@ export const Response = {
         'dataType': 'text',
         'name': 'Board',
         'label': 'Board',
-        'description': 'Education Board (Like MP Board, NCERT, etc)',
+        'description': 'Education Board (Like MP Board, sample_category1, etc)',
         'editable': true,
         'inputType': 'select',
         'required': false,
@@ -16,18 +16,18 @@ export const Response = {
         'index': 1,
         'range': [
             {
-                'identifier': 'ncf_board_ncert',
-                'code': 'ncert',
-                'name': 'NCERT',
+                'identifier': 'ncf_board_sample-framework',
+                'code': 'sample-framework',
+                'name': 'sample_category1',
                 'description': '',
                 'index': 1,
                 'category': 'board',
                 'status': 'Live'
             },
             {
-                'identifier': 'ncf_board_cbse',
-                'code': 'cbse',
-                'name': 'CBSE',
+                'identifier': 'ncf_board_sample-framework',
+                'code': 'sample-framework',
+                'name': 'sample_category1',
                 'description': '',
                 'index': 2,
                 'category': 'board',
@@ -107,8 +107,8 @@ export const Response = {
             }
         ]
     },
-    inputData: ['NCERT',
-        'CBSE',
+    inputData: ['sample_category1',
+        'sample_category1',
         'ICSE',
         'State (Uttar Pradesh)' ,
         'State (Andhra Pradesh)' ,
@@ -118,7 +118,7 @@ export const Response = {
         'State (Rajasthan)',
         'Other'],
         inputData2: [
-        'CBSE',
+        'sample_category1',
         'ICSE',
         'State (Uttar Pradesh)' ,
         'State (Andhra Pradesh)' ,
@@ -128,8 +128,8 @@ export const Response = {
         'State (Rajasthan)',
         'Other'],
     selectAll: {
-        'NCERT': true,
-        'CBSE': true,
+        'sample_category1': true,
+        'sample_category2': true,
         'ICSE': true,
         'State (Uttar Pradesh)': true,
         'State (Andhra Pradesh)': true,
@@ -140,7 +140,7 @@ export const Response = {
         'Other': true
     },
     selected: {
-        'CBSE': true,
+        'sample_category1': true,
         'ICSE': true,
         'State (Uttar Pradesh)': true,
         'State (Andhra Pradesh)': true,
@@ -151,8 +151,8 @@ export const Response = {
         'Other': true
     },
     selectAllFalse: {
-        'NCERT': false,
-        'CBSE': false,
+        'sample_category1': false,
+        'sample_category2': false,
         'ICSE': false,
         'State (Uttar Pradesh)': false,
         'State (Andhra Pradesh)': false,

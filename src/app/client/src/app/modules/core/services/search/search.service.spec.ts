@@ -152,11 +152,11 @@ describe('SearchService', () => {
       expect(obj).toEqual([{ name: 'board', index: '2', label: lbl, placeholder: lbl }]);
     });
 
-    it('should call the updateFacetsData with facets value board for cbse', () => {
-      const facets = [{ name: 'board', values: [{ name: 'CBSE' }] }];
+    it('should call the updateFacetsData with facets value board for sample-framework', () => {
+      const facets = [{ name: 'board', values: [{ name: 'sample_category1' }] }];
       const lbl = undefined;
       const obj = searchService.updateFacetsData(facets);
-      expect(obj).toEqual([{ name: 'board', index: '2', label: lbl, placeholder: lbl, values: [{ name: 'CBSE' }] }]);
+      expect(obj).toEqual([{ name: 'board', index: '2', label: lbl, placeholder: lbl, values: [{ name: 'sample_category1' }] }]);
     });
 
     it('should call the updateFacetsData with facets value medium', () => {

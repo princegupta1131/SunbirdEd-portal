@@ -45,11 +45,11 @@ export const mockFrameworkData = {
                   'code': 'grade5', 'name': 'Grade 5', 'description': '',
                   'category': 'gradeLevel', 'status': 'Live'
               }],
-              'identifier': 'ncf_board_ncert', 'code': 'ncert', 'name': 'NCERT',
+              'identifier': 'ncf_board_sample-framework', 'code': 'sample-framework', 'name': 'sample_category1',
               'description': '', 'index': 1, 'category': 'board', 'status': 'Live'
           },
           {
-              'identifier': 'ncf_board_cbse', 'code': 'cbse', 'name': 'CBSE',
+              'identifier': 'ncf_board_sample-framework', 'code': 'sample-framework', 'name': 'sample_category1',
               'description': '', 'index': 2, 'category': 'board', 'status': 'Live'
           },
           {
@@ -328,10 +328,10 @@ export const mockFrameworkData = {
                   'identifier': 'ncf_gradelevel_grade5', 'code': 'grade5', 'name': 'Grade 5',
                   'description': '', 'category': 'gradeLevel', 'status': 'Live'
               }],
-              'identifier': 'ncf_board_ncert', 'code': 'ncert', 'name': 'NCERT',
+              'identifier': 'ncf_board_sample-framework', 'code': 'sample-framework', 'name': 'sample_category1',
               'description': '', 'index': 1, 'category': 'board', 'status': 'Live'
           }, {
-              'identifier': 'ncf_board_cbse', 'code': 'cbse', 'name': 'CBSE', 'description': '',
+              'identifier': 'ncf_board_sample-framework', 'code': 'sample-framework', 'name': 'sample_category1', 'description': '',
               'index': 2, 'category': 'board', 'status': 'Live'
           },
           {
@@ -564,7 +564,7 @@ export const mockFrameworkData = {
       },
       {
           'code': 'board', 'dataType': 'text', 'name': 'Board', 'label': 'Board',
-          'description': 'Education Board (Like MP Board, NCERT, etc)', 'editable': true,
+          'description': 'Education Board (Like MP Board, sample_category1, etc)', 'editable': true,
           'placeholder': 'Board', 'inputType': 'select', 'required': false, 'displayProperty': 'Editable',
           'visible': true, 'renderingHints': { 'semanticColumnWidth': 'six' }, 'index': 2,
           'depends': ['gradeLevel']
@@ -648,11 +648,11 @@ export const mockFrameworkData = {
                               'identifier': 'ncf_gradelevel_grade5', 'code': 'grade5', 'name': 'Grade 5',
                               'description': '', 'category': 'gradeLevel', 'status': 'Live'
                           }],
-                          'identifier': 'ncf_board_ncert', 'code': 'ncert', 'name': 'NCERT', 'description': '',
+                          'identifier': 'ncf_board_sample-framework', 'code': 'sample-framework', 'name': 'sample_category1', 'description': '',
                           'index': 1, 'category': 'board', 'status': 'Live'
                       },
                       {
-                          'identifier': 'ncf_board_cbse', 'code': 'cbse', 'name': 'CBSE', 'description': '',
+                          'identifier': 'ncf_board_sample-framework', 'code': 'sample-framework', 'name': 'sample_category1', 'description': '',
                           'index': 2, 'category': 'board', 'status': 'Live'
                       },
                       {
@@ -1066,18 +1066,18 @@ export const mockFrameworkData = {
                     'status': 'Live'
                   }
                 ],
-                'identifier': 'ncf_board_ncert',
-                'code': 'ncert',
-                'name': 'NCERT',
+                'identifier': 'ncf_board_sample-framework',
+                'code': 'sample-framework',
+                'name': 'sample_category1',
                 'description': '',
                 'index': 1,
                 'category': 'board',
                 'status': 'Live'
               },
               {
-                'identifier': 'ncf_board_cbse',
-                'code': 'cbse',
-                'name': 'CBSE',
+                'identifier': 'ncf_board_sample-framework',
+                'code': 'sample-framework',
+                'name': 'sample_category1',
                 'description': '',
                 'index': 2,
                 'category': 'board',
@@ -1691,7 +1691,7 @@ export const mockFrameworkData = {
             'name': 'NIT123',
             'defaultCourseFramework': 'TPD',
             'status': 'Live',
-            'defaultFramework': 'ekstep_ncert_k-12'
+            'defaultFramework': 'ekstep_sample-framework_k-12'
         }
     }
 },
@@ -1783,8 +1783,8 @@ frameworkSearchByType: {
         'Framework': [
             {
                 'owner': '0127920770478571522',
-                'identifier': 'ekstep_ncert_k-12',
-                'code': 'ekstep_ncert_k-12',
+                'identifier': 'ekstep_sample-framework_k-12',
+                'code': 'ekstep_sample-framework_k-12',
                 'channel': '0127920770478571522',
                 'type': 'K-12',
                 'objectType': 'Framework',
@@ -1794,12 +1794,12 @@ frameworkSearchByType: {
                 ],
                 'name': 'Centre',
                 'categories': [
-                    'ekstep_ncert_k-12_board',
-                    'ekstep_ncert_k-12_medium',
-                    'ekstep_ncert_k-12_gradelevel',
-                    'ekstep_ncert_k-12_subject',
-                    'ekstep_ncert_k-12_topic',
-                    'ekstep_ncert_k-12_learningoutcome'
+                    'ekstep_sample-framework_k-12_board',
+                    'ekstep_sample-framework_k-12_medium',
+                    'ekstep_sample-framework_k-12_gradelevel',
+                    'ekstep_sample-framework_k-12_subject',
+                    'ekstep_sample-framework_k-12_topic',
+                    'ekstep_sample-framework_k-12_learningoutcome'
                 ]
             },
             {
@@ -1843,7 +1843,7 @@ userChannelDataEmptyFramework: {
             'name': 'NIT123',
             'defaultCourseFramework': 'TPD',
             'status': 'Live',
-            'defaultFramework': 'ekstep_ncert_k-12'
+            'defaultFramework': 'ekstep_sample-framework_k-12'
         }
     }
 },
@@ -1911,7 +1911,7 @@ userChannelDataWithFrameworkSameAsCategoryDefinition: {
             'name': 'NIT123',
             'defaultCourseFramework': 'TPD',
             'status': 'Live',
-            'defaultFramework': 'ekstep_ncert_k-12'
+            'defaultFramework': 'ekstep_sample-framework_k-12'
         }
     }
 },

@@ -379,8 +379,8 @@ export const Response = {
       'values': [
         {
           'identifier': '01299870666187571229',
-          'orgName': 'cbse2.9',
-          'slug': 'cbse2.9',
+          'orgName': 'sample-framework',
+          'slug': 'sample-framework',
           'name': 'Chhattisgarh'
         },
         {
@@ -403,9 +403,9 @@ export const Response = {
         },
         {
           'identifier': '013003025605320704110',
-          'orgName': 'VidyaDaan-CBSE',
+          'orgName': 'VidyaDaan-sample_category1',
           'slug': 'v123',
-          'name': 'VidyaDaan-CBSE'
+          'name': 'VidyaDaan-sample_category1'
         },
         {
           'identifier': '0126825293972439041',
@@ -439,9 +439,9 @@ export const Response = {
         },
         {
           'identifier': '01329314824202649627',
-          'orgName': 'CBSE',
-          'slug': 'cbse',
-          'name': 'CBSE'
+          'orgName': 'sample_category1',
+          'slug': 'sample-framework',
+          'name': 'sample_category1'
         },
         {
           'identifier': '0130301223148257281345',
@@ -463,9 +463,9 @@ export const Response = {
         },
         {
           'identifier': '01283607456185548825093',
-          'orgName': 'NCERT',
-          'slug': 'ncert',
-          'name': 'NCERT'
+          'orgName': 'sample_category1',
+          'slug': 'sample-framework',
+          'name': 'sample_category1'
         },
         {
           'identifier': '01346442741037465621',
@@ -487,9 +487,9 @@ export const Response = {
         },
         {
           'identifier': '0128325322816552960',
-          'orgName': 'CBSE',
-          'slug': 'cbse',
-          'name': 'CBSE'
+          'orgName': 'sample_category1',
+          'slug': 'sample-framework',
+          'name': 'sample_category1'
         },
         {
           'identifier': '01269934121990553633',
@@ -767,8 +767,8 @@ export const Response = {
     'channel': [
       {
         'identifier': '01299870666187571229',
-        'orgName': 'cbse2.9',
-        'slug': 'cbse2.9',
+        'orgName': 'sample-framework',
+        'slug': 'sample-framework',
         'name': 'Chhattisgarh'
       },
       {
@@ -791,9 +791,9 @@ export const Response = {
       },
       {
         'identifier': '013003025605320704110',
-        'orgName': 'VidyaDaan-CBSE',
+        'orgName': 'VidyaDaan-sample_category1',
         'slug': 'v123',
-        'name': 'VidyaDaan-CBSE'
+        'name': 'VidyaDaan-sample_category1'
       },
       {
         'identifier': '0126825293972439041',
@@ -827,9 +827,9 @@ export const Response = {
       },
       {
         'identifier': '01329314824202649627',
-        'orgName': 'CBSE',
-        'slug': 'cbse',
-        'name': 'CBSE'
+        'orgName': 'sample_category1',
+        'slug': 'sample-framework',
+        'name': 'sample_category1'
       },
       {
         'identifier': '0130301223148257281345',
@@ -851,9 +851,9 @@ export const Response = {
       },
       {
         'identifier': '01283607456185548825093',
-        'orgName': 'NCERT',
-        'slug': 'ncert',
-        'name': 'NCERT'
+        'orgName': 'sample_category1',
+        'slug': 'sample-framework',
+        'name': 'sample_category1'
       },
       {
         'identifier': '01346442741037465621',
@@ -875,9 +875,9 @@ export const Response = {
       },
       {
         'identifier': '0128325322816552960',
-        'orgName': 'CBSE',
-        'slug': 'cbse',
-        'name': 'CBSE'
+        'orgName': 'sample_category1',
+        'slug': 'sample-framework',
+        'name': 'sample_category1'
       },
       {
         'identifier': '01269934121990553633',
@@ -1068,7 +1068,7 @@ export const Response = {
             'cardImg': 'assets/images/book.png',
             'resourceType': 'Course',
             'organisation': [
-              'CBSE'
+              'sample_category1'
             ],
             'board': '',
             'identifier': 'do_213534040870518784155',
@@ -6962,9 +6962,9 @@ export const Response = {
       },
       {
         'identifier': '01329314824202649627',
-        'orgName': 'CBSE',
-        'slug': 'cbse',
-        'name': 'CBSE'
+        'orgName': 'sample_category1',
+        'slug': 'sample-framework',
+        'name': 'sample_category1'
       },
       {
         'identifier': '01272777697873100812',
@@ -7004,9 +7004,9 @@ export const Response = {
       },
       {
         'identifier': '01283607456185548825093',
-        'orgName': 'NCERT',
-        'slug': 'ncert',
-        'name': 'NCERT'
+        'orgName': 'sample_category1',
+        'slug': 'sample-framework',
+        'name': 'sample_category1'
       },
       {
         'identifier': '0127660481998602240',
@@ -7022,9 +7022,9 @@ export const Response = {
       },
       {
         'identifier': '0128325322816552960',
-        'orgName': 'CBSE',
-        'slug': 'cbse',
-        'name': 'CBSE'
+        'orgName': 'sample_category1',
+        'slug': 'sample-framework',
+        'name': 'sample_category1'
       },
       {
         'identifier': '0129909224683274240',

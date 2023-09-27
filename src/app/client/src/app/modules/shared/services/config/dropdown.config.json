@@ -91,10 +91,10 @@
         "boards": [
             "AP Board",
             "BSER",
-            "CBSE",
+            "sample_category1",
             "ICSE",
             "MSCERT",
-            "NCERT",
+            "sample_category2",
             "NCTE",
             "TN Board",
             "UP Board"
@@ -244,10 +244,10 @@
             "boards": [
                 "AP Board",
                 "BSER",
-                "CBSE",
+                "sample_category1",
                 "ICSE",
                 "MSCERT",
-                "NCERT",
+                "sample_category2",
                 "NCTE",
                 "TN Board",
                 "UP Board"

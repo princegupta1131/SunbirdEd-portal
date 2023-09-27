@@ -1189,7 +1189,7 @@ export const Response = {
                      'IL_FUNC_OBJECT_TYPE': 'Content',
                      'name': 'AAA',
                      'IL_UNIQUE_ID': 'do_112485749070602240134',
-                     'board': 'NCERT',
+                     'board': 'sample_category1',
                      'status': 'Review',
                      'resourceType': 'Worksheet',
                      'node_id': 71765
@@ -1317,7 +1317,7 @@ export const Response = {
                      'IL_FUNC_OBJECT_TYPE': 'Content',
                      'name': 'abcd',
                      'IL_UNIQUE_ID': 'do_112470956978200576116',
-                     'board': 'CBSE',
+                     'board': 'sample_category1',
                      'status': 'processing',
                      'resourceType': 'Story',
                      'node_id': 34837
@@ -1554,7 +1554,7 @@ export const Response = {
                      'IL_FUNC_OBJECT_TYPE': 'Content',
                      'name': 'archana_textbook',
                      'IL_UNIQUE_ID': 'do_1124707661006438401158',
-                     'board': 'CBSE',
+                     'board': 'sample_category1',
                      'status': 'Review',
                      'resourceType': 'Story',
                      'node_id': 34348

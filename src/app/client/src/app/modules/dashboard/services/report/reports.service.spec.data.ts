@@ -3,12 +3,12 @@ export const chartsArray = [
         'bigNumbers': [
             {
                 'footer': 'Total qr scans on device',
-                'header': 'CBSE: Devices playing',
+                'header': 'sample_category1: Devices playing',
                 'dataExpr': 'Total QR scans'
             },
             {
                 'footer': 'Percentage (%) of Failed QR Scans',
-                'header': 'CBSE: Devices playing',
+                'header': 'sample_category1: Devices playing',
                 'dataExpr': 'Percentage (%) of Failed QR Scans'
             }
         ]

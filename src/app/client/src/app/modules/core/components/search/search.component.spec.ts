@@ -14,7 +14,7 @@ import { mockResponse } from './search.component.spec.data';
 describe('SearchComponent', () => {
   let component: SearchComponent;
   const mockRouter: Partial<Router> = {
-    url: '/resources/view-all/Course-Unit/1?&selectedTab=course&board=CBSE%2FNCERT&medium=English&publisher=NCERT&',
+    url: '/resources/view-all/Course-Unit/1?&selectedTab=course&board=sample_category1%2Fsample_category1&medium=English&publisher=sample_category1&',
     navigate: jest.fn() as any,
     events: of({}) as any
   };

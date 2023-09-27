@@ -1189,7 +1189,7 @@ export const Response = {
                     'IL_FUNC_OBJECT_TYPE': 'Content',
                     'name': 'AAA',
                     'IL_UNIQUE_ID': 'do_112485749070602240134',
-                    'board': 'NCERT',
+                    'board': 'sample_category1',
                     'status': 'Review',
                     'resourceType': 'Worksheet',
                     'node_id': 71765
@@ -1314,7 +1314,7 @@ export const Response = {
                     'IL_FUNC_OBJECT_TYPE': 'Content',
                     'name': 'abcd',
                     'IL_UNIQUE_ID': 'do_112470956978200576116',
-                    'board': 'CBSE',
+                    'board': 'sample_category1',
                     'status': 'Review',
                     'resourceType': 'Story',
                     'node_id': 34837
@@ -1551,7 +1551,7 @@ export const Response = {
                     'IL_FUNC_OBJECT_TYPE': 'Content',
                     'name': 'archana_textbook',
                     'IL_UNIQUE_ID': 'do_1124707661006438401158',
-                    'board': 'CBSE',
+                    'board': 'sample_category1',
                     'status': 'Review',
                     'resourceType': 'Story',
                     'node_id': 34348
@@ -1735,7 +1735,7 @@ export const Response = {
                     'IL_FUNC_OBJECT_TYPE': 'Content',
                     'name': 'Untitled Collection',
                     'IL_UNIQUE_ID': 'do_112514189506805760167',
-                    'board': 'CBSE',
+                    'board': 'sample_category1',
                     'status': 'Review',
                     'resourceType': 'Lesson Plan',
                     'node_id': '19950'
@@ -1791,7 +1791,7 @@ export const Response = {
                     'IL_FUNC_OBJECT_TYPE': 'Content',
                     'name': 'Lesson plan_29xdfasdf',
                     'IL_UNIQUE_ID': 'do_112514187886796800163',
-                    'board': 'CBSE',
+                    'board': 'sample_category1',
                     'status': 'Review',
                     'resourceType': 'Lesson Plan',
                     'node_id': '19877'
@@ -1868,7 +1868,7 @@ export const Response = {
         'IL_FUNC_OBJECT_TYPE': 'Content',
         'name': 'Angular 5 routing tutorial',
         'IL_UNIQUE_ID': 'do_1125083103747932161150',
-        'board': 'NCERT',
+        'board': 'sample_category1',
         'status': 'Review',
         'resourceType': 'Learn',
         'node_id': 29215

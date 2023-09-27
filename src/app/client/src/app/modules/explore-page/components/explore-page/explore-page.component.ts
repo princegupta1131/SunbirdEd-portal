@@ -455,8 +455,8 @@ export class ExplorePageComponent implements OnInit, OnDestroy, AfterViewInit {
                             if (((_.get(currentPageData, 'metaData.filters').indexOf(filterValue) !== -1))) {
                                 let param = {};
                                 param[filterValue] = (typeof (params[filterValue]) === "string") ? params[filterValue].split(',') : params[filterValue];
-                                if (param[filterValue].length === 1 && param[filterValue][0] === 'CBSE/NCERT') {
-                                    param[filterValue][0] = "CBSE";
+                                if (param[filterValue].length === 1 && param[filterValue][0]) {
+                                    param[filterValue][0] = param[filterValue][0].split('/')[0].trim();
                                 }
                                 option.filters[filterValue] = (typeof (param[filterValue]) === "string") ? param[filterValue].split(',') : param[filterValue];
                             }
@@ -660,9 +660,9 @@ export class ExplorePageComponent implements OnInit, OnDestroy, AfterViewInit {
 
     public playContent(event, sectionName?) {
         const telemetryData = {
-            cdata: [{
+            cdata: [{ //ignore
                 type: 'Section',
-                id: (sectionName && sectionName.includes('NCERT')) ? 'NCERT' : sectionName
+                id: (sectionName && sectionName.includes('sample_category1')) ? 'sample_category1' : sectionName
             }],
             edata: {
                 id: 'content-card',
@@ -971,7 +971,7 @@ export class ExplorePageComponent implements OnInit, OnDestroy, AfterViewInit {
         const telemetryData = {
             cdata: [{
                 type: 'Section',
-                id: (event && event.name && event.name.includes('NCERT')) ? 'NCERT' : event.name
+                id: (event && event.name && event.name.includes('sample_category1')) ? 'sample_category1' : event.name
             }],
             edata: {
                 id: 'view-all'

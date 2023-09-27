@@ -28,7 +28,7 @@ export const Response = {
           ],
           'channel': '01329314824202649627',
           'organisation': [
-              'CBSE'
+              'sample_category1'
           ],
           'mimeType': 'application/vnd.ekstep.content-collection',
           'medium': [
@@ -55,11 +55,11 @@ export const Response = {
           'primaryCategory': 'Digital Textbook',
           'name': 'Question set offline book test',
           'contentType': 'TextBook',
-          'board': 'CBSE',
+          'board': 'sample_category1',
           'resourceType': 'Book',
           'orgDetails': {
               'email': null,
-              'orgName': 'CBSE'
+              'orgName': 'sample_category1'
           }
       }]
       }
@@ -81,7 +81,7 @@ export const Response = {
         'dataType': 'text',
         'name': 'Board',
         'label': 'Board',
-        'description': 'Education Board (Like MP Board, NCERT, etc)',
+        'description': 'Education Board (Like MP Board, sample_category1, etc)',
         'editable': true,
         'inputType': 'select',
         'required': false,
@@ -93,18 +93,18 @@ export const Response = {
         'index': 1,
         'range': [
           {
-            'identifier': 'ncf_board_ncert',
-            'code': 'ncert',
-            'name': 'NCERT',
+            'identifier': 'ncf_board_sample-framework',
+            'code': 'sample-framework',
+            'name': 'sample_category1',
             'description': '',
             'index': 2,
             'category': 'board',
             'status': 'Live'
           },
           {
-            'identifier': 'ncf_board_cbse',
-            'code': 'cbse',
-            'name': 'CBSE',
+            'identifier': 'ncf_board_sample-framework',
+            'code': 'sample-framework',
+            'name': 'sample_category1',
             'description': '',
             'index': 1,
             'category': 'board',
@@ -293,7 +293,7 @@ export const Response = {
         'course'
       ],
       'se_boards': [
-        'CBSE'
+        'sample_category1'
       ],
       'se_mediums': [
         'english'

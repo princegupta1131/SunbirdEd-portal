@@ -51,7 +51,7 @@ export const Response = {
         'createdBy': '874ed8a5-782e-4f6c-8f36-e0288455901e',
         'name': 'Untitled lesson',
         'usedByContent': [],
-        'board': 'NCERT',
+        'board': 'sample_category1',
         'resourceType': [
             'Study material'
         ],

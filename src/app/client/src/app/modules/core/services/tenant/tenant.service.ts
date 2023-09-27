@@ -56,8 +56,8 @@ export class TenantService extends DataService {
    * Variable that holds default tenant value
    */
   private _defaultTenant = '';
-  // TODO refactor the igot specific changes
-  slugForIgot = '';
+  // TODO refactor the sample_channel specific changes
+  slugForSampleChannel= '';
   /**
    * The constructor
    * @param {HttpClient} http Reference of HttpClient.
@@ -70,7 +70,7 @@ export class TenantService extends DataService {
     this.baseUrl = this.config.urlConFig.URLS.TENANT_PREFIX;
     this._defaultTenant = (<HTMLInputElement>document.getElementById('defaultTenant'))
       ? (<HTMLInputElement>document.getElementById('defaultTenant')).value : null;
-    this.slugForIgot = (<HTMLInputElement>document.getElementById('slugForProminentFilter')) ?
+    this.slugForSampleChannel = (<HTMLInputElement>document.getElementById('slugForProminentFilter')) ?
       (<HTMLInputElement>document.getElementById('slugForProminentFilter')).value : null;
   }
 
@@ -101,7 +101,7 @@ export class TenantService extends DataService {
    */
   public getTenantInfo(slug?: string) {
     const orgDetailsFromSlug = this.cacheService.get('orgDetailsFromSlug');
-    // TODO: to rework igot.
+    // TODO: to rework slugForSampleChannel.
     if (_.get(orgDetailsFromSlug, 'slug')) {
       slug = _.get(orgDetailsFromSlug, 'slug');
     }
@@ -118,8 +118,8 @@ export class TenantService extends DataService {
   }
 
   public getTenantConfig(slug: string) {
-    if ((slug && slug !== '') && slug === this.slugForIgot) {
-      slug = this.slugForIgot;
+    if ((slug && slug !== '') && slug === this.slugForSampleChannel) {
+      slug = this.slugForSampleChannel;
     } else {
       slug = this._defaultTenant;
     }
