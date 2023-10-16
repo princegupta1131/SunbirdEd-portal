@@ -277,10 +277,10 @@ export class AllContentComponent extends WorkSpace implements OnInit, AfterViewI
         createdBy: this.userService.userid,
         // tslint:disable-next-line:max-line-length
         primaryCategory: _.get(bothParams, 'queryParams.primaryCategory') || (!_.isEmpty(primaryCategories) ? primaryCategories : this.config.appConfig.WORKSPACE.primaryCategory),
-        board: bothParams.queryParams.board,
-        subject: bothParams.queryParams.subject,
-        medium: bothParams.queryParams.medium,
-        gradeLevel: bothParams.queryParams.gradeLevel
+        foodcrops: bothParams.queryParams.foodcrops,
+        livestockspecies: bothParams.queryParams.livestockspecies,
+        commercialcrops: bothParams.queryParams.commercialcrops,
+        livestockmanagement: bothParams.queryParams.livestockmanagement
       },
       limit: limit,
       offset: (pageNumber - 1) * (limit),
@@ -376,7 +376,7 @@ export class AllContentComponent extends WorkSpace implements OnInit, AfterViewI
             });
 
             _.forEach(collections, collection => {
-              const obj = _.pick(collection, ['contentType', 'board', 'medium', 'name', 'gradeLevel', 'subject', 'channel']);
+              const obj = _.pick(collection, ['contentType', 'foodcrops', 'commercialcrops', 'name', 'livestockmanagement', 'livestockspecies', 'channel']);
               obj['channel'] = channelMapping[obj.channel];
               this.collectionData.push(obj);
           });
@@ -384,10 +384,10 @@ export class AllContentComponent extends WorkSpace implements OnInit, AfterViewI
           this.headers = {
             type: 'Type',
             name: 'Name',
-            subject: 'Subject',
-            grade: 'Grade',
-            medium: 'Medium',
-            board: 'Board',
+            livestockspecies: 'Livestockspecies',
+            livestockmanagement: 'Livestockmanagement',
+            commercialcrops: 'Commercialcrops',
+            foodcrops: 'Foodcrops',
             channel: 'Tenant Name'
             };
             if (!_.isUndefined(modal)) {

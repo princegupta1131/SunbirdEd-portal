@@ -281,6 +281,7 @@ export class SbFormLocationSelectionDelegate {
   }
 
   private async loadForm(formInputParams, initial = false, showModal = true, isStepper = false) {
+    console.log(formInputParams)
     let useCases: UseCase[];
     // If user register workflow
     if (!showModal) {

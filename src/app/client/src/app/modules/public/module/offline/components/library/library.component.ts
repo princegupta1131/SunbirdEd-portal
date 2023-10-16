@@ -136,10 +136,11 @@ export class LibraryComponent implements OnInit, OnDestroy {
             this.svgToDisplay = imageName;
             this.globalSearchFacets = _.get(this.currentPageData, 'search.facets');
             this.globalSearchFacets = [
-                'se_boards',
-                'se_gradeLevels',
-                'se_subjects',
-                'se_mediums',
+                'foodcrops',
+                'commercialcrops',
+                'livestockmanagement',
+                'livestockspecies',
+                'animalwelfare',
                 'primaryCategory',
                 'mimeType'
               ];
@@ -253,8 +254,8 @@ export class LibraryComponent implements OnInit, OnDestroy {
 
         this.selectedFilters = filterData;
         const defaultFilters = _.reduce(filters, (collector: any, element) => {
-            if (element.code === 'board') {
-                collector.board = _.get(_.orderBy(element.range, ['index'], ['asc']), '[0].name') || '';
+            if (element.code === 'foodcrops') {
+                collector.foodcrops = _.get(_.orderBy(element.range, ['index'], ['asc']), '[0].name') || '';
             }
             return collector;
         }, {});
@@ -270,7 +271,7 @@ export class LibraryComponent implements OnInit, OnDestroy {
         return o.name === (selectedMediaType || 'all');
         });
         const pageType = _.get(this.queryParams, 'pageTitle');
-        const filters: any = _.omit(this.queryParams, ['key', 'sort_by', 'sortType', 'appliedFilters', 'softConstraints', 'selectedTab', 'mediaType', 'contentType', 'board', 'medium', 'gradeLevel', 'subject']);
+        const filters: any = _.omit(this.queryParams, ['key', 'sort_by', 'sortType', 'appliedFilters', 'softConstraints', 'selectedTab', 'mediaType', 'contentType', 'foodcrops', 'commercialcrops', 'livestockmanagement', 'livestockspecies','animalwelfare']);
         if (!filters.channel) {
             filters.channel = this.hashTagId;
         }
@@ -284,7 +285,7 @@ export class LibraryComponent implements OnInit, OnDestroy {
         });
         const softConstraints = _.get(this.activatedRoute.snapshot, 'data.softConstraints') || {};
         if (this.queryParams.key) {
-        delete softConstraints['board'];
+        delete softConstraints['foodcrops'];
         }
         const option: any = {
             filters: _.omitBy(filters || {}, value => _.isArray(value) ? (!_.get(value, 'length') ? true : false) : false),
@@ -311,18 +312,18 @@ export class LibraryComponent implements OnInit, OnDestroy {
             if (searchRes) {
                 const facets = this.searchService.updateFacetsData(_.get(searchRes, 'result.facets'));
                 this.facets = facets.filter(facet => facet.values.length > 0);
-                const filteredContents = _.omit(_.groupBy(searchRes['result'].content, 'subject'), ['undefined']);
-                const otherContents = _.filter(searchRes['result'].content, (content) => !content.subject );
+                const filteredContents = _.omit(_.groupBy(searchRes['result'].content, 'livestockspecies '), ['undefined']);
+                const otherContents = _.filter(searchRes['result'].content, (content) => !content.Livestockspecies  );
                 // Check for multiple subjects
                 for (const [key, value] of Object.entries(filteredContents)) {
                     const isMultipleSubjects = key.split(',').length > 1;
                     if (isMultipleSubjects) {
                         const subjects = key.split(',');
-                        subjects.forEach((subject) => {
-                            if (filteredContents[subject]) {
-                                filteredContents[subject] = _.uniqBy(filteredContents[subject].concat(value), 'identifier');
+                        subjects.forEach((livestockspecies ) => {
+                            if (filteredContents[livestockspecies ]) {
+                                filteredContents[livestockspecies ] = _.uniqBy(filteredContents[livestockspecies ].concat(value), 'identifier');
                             } else {
-                                filteredContents[subject] = value;
+                                filteredContents[livestockspecies ] = value;
                             }
                         });
                         delete filteredContents[key];

@@ -220,7 +220,7 @@ export class CoursePageComponent implements OnInit, OnDestroy, AfterViewInit {
       name: 'Course',
       organisationId: hashTagId || '*',
       filters,
-      facets: _.get(currentPageData, 'search.facets') || ['channel', 'gradeLevel', 'subject', 'medium'],
+      facets: _.get(currentPageData, 'search.facets') || ['channel', 'livestockmanagement', 'livestockspecies', 'commercialcrops'],
       params: _.get(this.configService, 'appConfig.CoursePageSection.contentApiQueryParams'),
       ...(!this.isUserLoggedIn() && {
         params: _.get(this.configService, 'appConfig.ExplorePage.contentApiQueryParams'),
@@ -319,7 +319,7 @@ export class CoursePageComponent implements OnInit, OnDestroy, AfterViewInit {
       exists: ['batches.batchId'],
       sort_by: { 'me_averageRating': 'desc', 'batches.startDate': 'desc' },
       organisationId: this.hashTagId || '*',
-      facets: _.get(currentPageData, 'search.facets') || ['channel', 'gradeLevel', 'subject', 'medium'],
+      facets: _.get(currentPageData, 'search.facets') || ['channel', 'livestockmanagement', 'livestockspecies', 'commercialcrops'],
       fields: this.configService.urlConFig.params.CourseSearchField
     };
     return this.searchService.contentSearch(option)
@@ -328,18 +328,18 @@ export class CoursePageComponent implements OnInit, OnDestroy, AfterViewInit {
           this._courseSearchResponse = response;
           // For content(s) without subject name(s); map it to 'Others'
           _.forEach(_.get(response, 'result.content'), function (content) {
-            if (!_.get(content, 'subject') || !_.size(_.get(content, 'subject'))) { content['subject'] = ['Others']; }
+            if (!_.get(content, 'livestockspecies') || !_.size(_.get(content, 'livestockspecies'))) { content['livestockspecies'] = ['Others']; }
           });
-          const filteredContents = _.omit(_.groupBy(_.get(response, 'result.content'), 'subject'), ['undefined']);
+          const filteredContents = _.omit(_.groupBy(_.get(response, 'result.content'), 'livestockspecies'), ['undefined']);
           for (const [key, value] of Object.entries(filteredContents)) {
             const isMultipleSubjects = key.split(',').length > 1;
             if (isMultipleSubjects) {
               const subjects = key.split(',');
-              subjects.forEach((subject) => {
-                if (filteredContents[subject]) {
-                  filteredContents[subject] = _.uniqBy(filteredContents[subject].concat(value), 'identifier');
+              subjects.forEach((livestockspecies) => {
+                if (filteredContents[livestockspecies]) {
+                  filteredContents[livestockspecies] = _.uniqBy(filteredContents[livestockspecies].concat(value), 'identifier');
                 } else {
-                  filteredContents[subject] = value;
+                  filteredContents[livestockspecies] = value;
                 }
               });
               delete filteredContents[key];
@@ -448,8 +448,8 @@ export class CoursePageComponent implements OnInit, OnDestroy, AfterViewInit {
     }
     this.selectedFilters = filterData;
     const defaultFilters = _.reduce(filters, (collector: any, element) => {
-      if (element && element.code === 'board') {
-        collector.board = _.get(_.orderBy(element.range, ['index'], ['asc']), '[0].name') || '';
+      if (element && element.code === 'foodcrops') {
+        collector.foodcrops = _.get(_.orderBy(element.range, ['index'], ['asc']), '[0].name') || '';
       }
       return collector;
     }, {});
@@ -741,45 +741,45 @@ export class CoursePageComponent implements OnInit, OnDestroy, AfterViewInit {
     const facetsData = [];
     _.forEach(facets, (facet, key) => {
       switch (key) {
-        case 'se_boards':
-        case 'board':
+        case 'se_foodcrops':
+        case 'foodcrops':
           const boardData = {
-            index: '1',
-            label: _.get(this.resourceService, 'frmelmnts.lbl.boards'),
-            placeholder: _.get(this.resourceService, 'frmelmnts.lbl.selectBoard'),
+            index: '2',
+            label: _.get(this.resourceService, 'frmelmnts.lbl.foodcrops'),
+            placeholder: _.get(this.resourceService, 'frmelmnts.lbl.selectFoodcrops'),
             values: facet,
             name: key
           };
           facetsData.push(boardData);
           break;
-        case 'se_mediums':
-        case 'medium':
+        case 'se_commercialcrops':
+        case 'commercialcrops':
           const mediumData = {
-            index: '2',
-            label: _.get(this.resourceService, 'frmelmnts.lbl.medium'),
-            placeholder: _.get(this.resourceService, 'frmelmnts.lbl.selectMedium'),
+            index: '3',
+            label: _.get(this.resourceService, 'frmelmnts.lbl.commercialcrops'),
+            placeholder: _.get(this.resourceService, 'frmelmnts.lbl.selectCommercialcrops'),
             values: facet,
             name: key
           };
           facetsData.push(mediumData);
           break;
-        case 'se_gradeLevels':
-        case 'gradeLevel':
+        case 'se_livestockmanagement':
+        case 'livestockmanagement':
           const gradeLevelData = {
             index: '3',
-            label: _.get(this.resourceService, 'frmelmnts.lbl.class'),
-            placeholder: _.get(this.resourceService, 'frmelmnts.lbl.selectClass'),
+            label: _.get(this.resourceService, 'frmelmnts.lbl.livestockmanagement'),
+            placeholder: _.get(this.resourceService, 'frmelmnts.lbl.selectLivestockmanagement'),
             values: facet,
             name: key
           };
           facetsData.push(gradeLevelData);
           break;
-        case 'se_subjects':
-        case 'subject':
+        case 'se_livestockspecies':
+        case 'livestockspecies':
           const subjectData = {
             index: '4',
-            label: _.get(this.resourceService, 'frmelmnts.lbl.subject'),
-            placeholder: _.get(this.resourceService, 'frmelmnts.lbl.selectSubject'),
+            label: _.get(this.resourceService, 'frmelmnts.lbl.livestockspecies'),
+            placeholder: _.get(this.resourceService, 'frmelmnts.lbl.selectLivestockspecies'),
             values: facet,
             name: key
           };

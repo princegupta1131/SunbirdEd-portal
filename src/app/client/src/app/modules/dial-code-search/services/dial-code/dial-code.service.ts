@@ -137,8 +137,8 @@ export class DialCodeService {
             contentType: this.config.appConfig.DialAssembleSearch.contentType,
           },
           userProfile:
-            this.user.loggedIn && _.get(this.user.userProfile, 'framework.board')
-              ? { board: this.user.userProfile.framework.board }
+            this.user.loggedIn && _.get(this.user.userProfile, 'framework.foodcrops')
+              ? { foodcrops: this.user.userProfile.framework.foodcrops }
               : {},
         },
       },

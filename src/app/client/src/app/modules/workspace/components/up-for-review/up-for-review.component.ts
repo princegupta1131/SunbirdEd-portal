@@ -210,10 +210,12 @@ export class UpForReviewComponent extends WorkSpace implements OnInit, AfterView
           rolesMap['CONTENT_REVIEW'])),
         createdBy: { '!=': this.userService.userid },
         objectType: this.isQuestionSetEnabled ? this.config.appConfig.WORKSPACE.allowedObjectType : this.config.appConfig.WORKSPACE.objectType,
-        board: bothParams.queryParams.board,
-        subject: bothParams.queryParams.subject,
-        medium: bothParams.queryParams.medium,
-        gradeLevel: bothParams.queryParams.gradeLevel
+        commercialcrops: bothParams.queryParams.commercialcrops,
+        livestockmanagement: bothParams.queryParams.livestockmanagement,
+        livestockspecies: bothParams.queryParams.livestockspecies,
+        animalwelfare: bothParams.queryParams.animalwelfare,
+        foodcrops: bothParams.queryParams.foodcrops
+
       },
       limit: limit,
       offset: (pageNumber - 1) * (limit),

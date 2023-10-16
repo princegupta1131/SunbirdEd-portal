@@ -28,7 +28,7 @@ import { CacheService } from '../../../shared/services/cache-service/cache.servi
 export class GlobalSearchFilterComponent implements OnInit, OnChanges, OnDestroy {
   @Input() facets;
   @Input() queryParamsToOmit;
-  @Input() supportedFilterAttributes = ['se_boards', 'se_mediums', 'se_gradeLevels', 'se_subjects', 'primaryCategory', 'mediaType', 'additionalCategories', 'channel'];
+  @Input() supportedFilterAttributes = ['foodcrops', 'commercialcrops', 'livestockmanagement', 'livestockspecies','animalwelfare', 'primaryCategory', 'mediaType', 'additionalCategories', 'channel'];
   public filterLayout = LibraryFiltersLayout;
   public selectedMediaTypeIndex = 0;
   public selectedMediaType: string;
@@ -129,7 +129,7 @@ export class GlobalSearchFilterComponent implements OnInit, OnChanges, OnDestroy
     if (this.utilService.isDesktopApp) {
       const userPreferences: any = this.userService.anonymousUserPreference;
       if (userPreferences) {
-        _.forEach(['board', 'medium', 'gradeLevel', 'channel'], (item) => {
+        _.forEach(['foodcrops', 'commercialcrops', 'commercialcrops', 'channel'], (item) => {
           if (!_.has(this.selectedFilters, item)) {
             this.selectedFilters[item] = _.isArray(userPreferences.framework[item]) ?
             userPreferences.framework[item] : _.split(userPreferences.framework[item], ', ');
@@ -160,7 +160,7 @@ export class GlobalSearchFilterComponent implements OnInit, OnChanges, OnDestroy
       map((queryParams) => {
         const queryFilters: any = {};
         _.forIn(queryParams, (value, key) => {
-          if (['medium', 'gradeLevel', 'board', 'channel', 'subject', 'primaryCategory', 'key', 'mediaType', 'se_boards', 'se_mediums', 'se_gradeLevels', 'se_subjects', 'additionalCategories'].includes(key)) {
+          if (['commercialcrops', 'livestockmanagement, livestockspecies', 'foodcrops','animalwelfare', 'channel', 'primaryCategory', 'key', 'mediaType', 'se_boards', 'se_mediums', 'se_gradeLevels', 'se_subjects', 'additionalCategories'].includes(key)) {
             queryFilters[key] = key === 'key' || _.isArray(value) ? value : [value];
           }
         });
@@ -295,7 +295,7 @@ export class GlobalSearchFilterComponent implements OnInit, OnChanges, OnDestroy
       queryParams: {
         ...(() => {
           const queryParams = _.cloneDeep(this.activatedRoute.snapshot.queryParams);
-          const queryFilters = [...this.supportedFilterAttributes, ...['board', 'medium', 'gradeLevel', 'channel']];
+          const queryFilters = [...this.supportedFilterAttributes, ...['foodcrops', 'commercialcrops', 'livestockmanagement','livestockspecies', 'animalwelfare', 'channel']];
           queryFilters.forEach((attr) => delete queryParams[attr]);
           return queryParams;
         })()

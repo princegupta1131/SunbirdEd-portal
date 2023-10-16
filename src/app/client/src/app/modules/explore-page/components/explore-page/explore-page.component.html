@@ -53,15 +53,21 @@
                 <p>{{resourceService?.frmelmnts?.lbl?.yourPreferences}}
                   <span class="preference-icon ml-4"><img src="assets/images/icon-info.svg"></span>
                 </p>
-                <p>
+            
+                  <p *ngFor = "let category of userPreference?.framework | keyvalue">
+                  <!-- <p> -->
                   <span class="mr-24">
-                    <span *ngIf="userPreference?.framework?.board?.length">{{resourceService?.frmelmnts?.lbl?.boards | transposeTerms: 'frmelmnts.lbl.boards': resourceService?.selectedLang}}:
+                    <span >{{category.key}}:
                     </span>
-                    <span *ngIf="userPreference?.framework?.board?.length"
-                      class="font-weight-bold">{{convertToString(userPreference?.framework?.board)}}</span>
+                    <p *ngFor="let item of category.value">
+                    <span
+                      class="font-weight-bold">{{item}}</span>
+                    </p>
                   </span>
+                <!-- </p> -->
+                </p>
 
-                  <span class="mr-24">
+                  <!-- <span class="mr-24">
                     <span *ngIf="userPreference?.framework?.medium?.length">{{resourceService?.frmelmnts?.lbl?.medium | transposeTerms: 'frmelmnts.lbl.medium': resourceService?.selectedLang}}:
                     </span>
                     <span  *ngIf="userPreference?.framework?.medium?.length" class="font-weight-bold">{{userPreference?.framework?.medium[0]}}</span>
@@ -78,8 +84,7 @@
                     <span class="font-weight-bold" *ngIf="userPreference?.framework?.gradeLevel?.length > 1">
                       ... + {{userPreference?.framework?.gradeLevel?.length-1}}
                     </span>
-                  </span>
-                </p>
+                  </span> -->
               </div>
               <button
                 class="sb-btn sb-btn-primary sb-btn-normal sb-btn-border">{{resourceService?.frmelmnts?.lbl?.changePreferences}}</button>

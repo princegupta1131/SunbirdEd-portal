@@ -165,7 +165,7 @@ export class HomeSearchComponent implements OnInit, OnDestroy, AfterViewInit {
     filters = this.schemaService.schemaValidator({
       inputObj: filters || {},
       properties: _.get(this.schemaService.getSchema('content'), 'properties') || {},
-      omitKeys: ['key', 'sort_by', 'sortType', 'appliedFilters', 'selectedTab', 'mediaType', 'contentType', 'board', 'medium', 'gradeLevel', 'subject', 'description']
+      omitKeys: ['key', 'sort_by', 'sortType', 'appliedFilters', 'selectedTab', 'mediaType', 'contentType', 'livestockmanagement', 'foodcrops', 'commercialcrops', 'livestockspecies', 'animalwelfare','description']
     });
     filters.primaryCategory = filters.primaryCategory || _.get(this.allTabData, 'search.filters.primaryCategory');
     filters.mimeType = filters.mimeType || _.get(mimeType, 'values');
@@ -189,6 +189,132 @@ export class HomeSearchComponent implements OnInit, OnDestroy, AfterViewInit {
       params: this.configService.appConfig.Course.contentApiQueryParams,
       pageNumber: this.paginationDetails.currentPage
     };
+    // let data = {
+    //   "id": "api.content.search",
+    //   "ver": "1.0",
+    //   "ts": "2023-10-10T13:56:50.374Z",
+    //   "params": {
+    //     "resmsgid": "dc3a4e60-6774-11ee-a1e6-236e810e887c",
+    //     "msgid": "6803be90-3c86-4964-a5db-fdb8b39dd9cc",
+    //     "status": "successful",
+    //     "err": null,
+    //     "errmsg": null
+    //   },
+    //   "responseCode": "OK",
+    //   "result": {
+    //     "count": 1,
+    //     "content": [
+    //       {
+    //         "trackable": {
+    //           "enabled": "No",
+    //           "autoBatch": "No"
+    //         },
+    //         "identifier": "do_113777389672423424171",
+    //         "primaryCategory": "Course Unit",
+    //         "channel": "0137541424673095687",
+    //         "name": "Course Unit",
+    //         "mimeType": "application/vnd.ekstep.content-collection",
+    //         "contentType": "CourseUnit",
+    //         "pkgVersion": 1,
+    //         "objectType": "Content",
+    //         "orgDetails": {
+    //           "email": null,
+    //           "orgName": "Sunbird Org"
+    //         }
+    //       }
+    //     ],
+    //     "facets": [
+    //       {
+    //         "values": [
+    //           {
+    //             "name": "grains",
+    //             "count": 9
+    //           },
+    //           {
+    //             "name": "horticulture",
+    //             "count": 32
+    //           }
+    //         ],
+    //         "name": "foodcrops"
+    //       },
+    //       {
+    //         "values": [
+    //           {
+    //             "name": "feedingandnutrition",
+    //             "count": 9
+    //           },
+    //           {
+    //             "name": "geneticsandselection",
+    //             "count": 32
+    //           }
+    //         ],
+    //         "name": "livestockmanagement"
+    //       },
+    //       {
+    //         "values": [
+    //           {
+    //             "name": "course unit",
+    //             "count": 1
+    //           }
+    //         ],
+    //         "name": "primaryCategory"
+    //       },
+    //       {
+    //         "values": [
+    //           {
+    //             "name": "crops",
+    //             "count": 9
+    //           },
+    //           {
+    //             "name": "pastures",
+    //             "count": 32
+    //           }
+    //         ],
+    //         "name": "commercialcrops"
+    //       },
+    //       {
+    //         "values": [
+    //           {
+    //             "name": "beefcattle",
+    //             "count": 9
+    //           },
+    //           {
+    //             "name": "bees",
+    //             "count": 32
+    //           }
+    //         ],
+    //         "name": "livestockspecies"
+    //       },
+    //       {
+    //         "values": [
+    //           {
+    //             "name": "diseases",
+    //             "count": 9
+    //           }
+    //         ],
+    //         "name": "animalwelfare"
+    //       },
+    //       {
+    //         "values": [
+    //           {
+    //             "name": "content",
+    //             "count": 1
+    //           }
+    //         ],
+    //         "name": "mediaType"
+    //       },
+    //       {
+    //         "values": [
+    //           {
+    //             "name": "application/vnd.ekstep.content-collection",
+    //             "count": 1
+    //           }
+    //         ],
+    //         "name": "mimeType"
+    //       }
+    //     ]
+    //   }
+    // }
     this.searchService.contentSearch(option)
       .pipe(
         mergeMap(data => {
@@ -531,11 +657,11 @@ export class HomeSearchComponent implements OnInit, OnDestroy, AfterViewInit {
       const _searchFilters = this.cacheService.get('searchFiltersAll');
       let _cacheFilters = {
         primaryCategory: [..._.intersection(filterData['primaryCategory'], _searchFilters['primaryCategory']), ..._.difference(filterData['primaryCategory'], _searchFilters['primaryCategory'])],
-        se_boards: (_.get(filterData, 'se_boards') && filterData['se_boards'].length > 0) ? [_.union(_searchFilters['se_boards'], filterData['se_boards'])[0]] : [],
-        se_mediums: [..._.intersection(filterData['se_mediums'], _searchFilters['se_mediums']), ..._.difference(filterData['se_mediums'], _searchFilters['se_mediums'])],
-        se_gradeLevels: [..._.intersection(filterData['se_gradeLevels'], _searchFilters['se_gradeLevels']), ..._.difference(filterData['se_gradeLevels'], _searchFilters['se_gradeLevels'])],
-        se_subjects: [..._.intersection(filterData['se_subjects'], _searchFilters['se_subjects']),
-        ..._.difference(filterData['se_subjects'], _searchFilters['se_subjects'])].map((e) => { return _.startCase(e) }),
+        foodcrops: (_.get(filterData, 'foodcrops') && filterData['foodcrops'].length > 0) ? [_.union(_searchFilters['foodcrops'], filterData['foodcrops'])[0]] : [],
+        commercialcrops: [..._.intersection(filterData['commercialcrops'], _searchFilters['commercialcrops']), ..._.difference(filterData['commercialcrops'], _searchFilters['commercialcrops'])],
+        livestockmanagement: [..._.intersection(filterData['livestockmanagement'], _searchFilters['livestockmanagement']), ..._.difference(filterData['livestockmanagement'], _searchFilters['livestockmanagement'])],
+        livestockspecies: [..._.intersection(filterData['livestockspecies'], _searchFilters['livestockspecies']),
+        ..._.difference(filterData['livestockspecies'], _searchFilters['livestockspecies'])].map((e) => { return _.startCase(e) }),
         selectedTab: _.get(this.activatedRoute, 'snapshot.queryParams.selectedTab') || 'all'
       };
       for (const key in _cacheFilters) {
@@ -552,8 +678,8 @@ export class HomeSearchComponent implements OnInit, OnDestroy, AfterViewInit {
       }
     }
     const defaultFilters = _.reduce(filters, (collector: any, element) => {
-      if (element.code === 'board') {
-        collector.board = _.get(_.orderBy(element.range, ['index'], ['asc']), '[0].name') || '';
+      if (element.code === 'foodcrops') {
+        collector.foodcrops = _.get(_.orderBy(element.range, ['index'], ['asc']), '[0].name') || '';
       }
       return collector;
     }, {});
@@ -568,8 +694,8 @@ public viewAll(event) {
     searchQueryParams['exists'] = undefined;
     searchQueryParams['primaryCategory'] = (this.queryParams.primaryCategory && this.queryParams.primaryCategory.length)
      ? this.queryParams.primaryCategory : [event.name];
-     (this.queryParams.primaryCategory && this.queryParams.primaryCategory.length) ? (searchQueryParams['subject'] = [event.name]) :
-    (searchQueryParams['se_subjects'] = this.queryParams.se_subjects);
+     (this.queryParams.primaryCategory && this.queryParams.primaryCategory.length) ? (searchQueryParams['livestockspecies'] = [event.name]) :
+    (searchQueryParams['livestockspecies'] = this.queryParams.livestockspecies);
     searchQueryParams['selectedTab'] = 'all';
   if (this.queryParams.channel) {
     searchQueryParams['channel'] = this.queryParams.channel;

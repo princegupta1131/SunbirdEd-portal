@@ -12,7 +12,7 @@ import { Observable, of, forkJoin } from 'rxjs';
 import  dayjs from 'dayjs';
 import { v4 as UUID } from 'uuid';
 
-const PRE_DEFINED_PARAMETERS = ['$slug', '$board', '$state', '$channel'];
+const PRE_DEFINED_PARAMETERS = ['$slug', '$foodcrops', '$state', '$channel'];
 
 
 @Injectable({
@@ -422,17 +422,17 @@ export class ReportService  {
           return this.cachedMapping['$slug'];
         }
       },
-      $board: {
-        value: _.get(this.userService, 'userProfile.framework.board[0]'),
+      $foodcrops: {
+        value: _.get(this.userService, 'userProfile.framework.foodcrops[0]'),
         masterData: () => {
-          if (!this.cachedMapping.hasOwnProperty('$board')) {
-            this.cachedMapping['$board'] = this.frameworkService.getChannel(_.get(this.userService, 'hashTagId'))
+          if (!this.cachedMapping.hasOwnProperty('$foodcrops')) {
+            this.cachedMapping['$foodcrops'] = this.frameworkService.getChannel(_.get(this.userService, 'hashTagId'))
               .pipe(
                 mergeMap(channel => this.frameworkService.getFrameworkCategories(_.get(channel, 'result.channel.defaultFramework'))
                   .pipe(
                     map(framework => {
                       const frameworkData = _.get(framework, 'result.framework');
-                      const boardCategory = _.find(frameworkData.categories, ['code', 'board']);
+                      const boardCategory = _.find(frameworkData.categories, ['code', 'foodcrops']);
                       if (!boardCategory) { return of([]); }
                       return _.map(boardCategory.terms, 'name');
                     }),
@@ -441,7 +441,7 @@ export class ReportService  {
                 catchError(err => of([]))
               );
           }
-          return this.cachedMapping['$board'];
+          return this.cachedMapping['$foodcrops'];
         }
       },
       $state: {

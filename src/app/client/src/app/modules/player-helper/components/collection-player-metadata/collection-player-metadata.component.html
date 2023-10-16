@@ -7,23 +7,23 @@
     <dd>{{metaData.author}}</dd>
   </dl>
 
-  <dl class="sb-meta-data" *ngIf="metaData.medium">
-    <dt>{{resourceService?.frmelmnts?.lbl?.medium | transposeTerms: 'frmelmnts.lbl.medium' : resourceService?.selectedLang}}</dt>
-    <dd>{{metaData.medium}}</dd>
+  <dl class="sb-meta-data" *ngIf="metaData.commercialcrops">
+    <dt>{{resourceService?.frmelmnts?.lbl?.commercialcrops | transposeTerms: 'frmelmnts.lbl.commercialcrops' : resourceService?.selectedLang}}</dt>
+    <dd>{{metaData.commercialcrops}}</dd>
   </dl>
 
-  <dl class="sb-meta-data" *ngIf="metaData.gradeLevel">
-    <dt>{{resourceService?.frmelmnts?.lbl?.class | transposeTerms: 'frmelmnts.lbl.class' : resourceService?.selectedLang}}</dt>
+  <dl class="sb-meta-data" *ngIf="metaData.livestockmanagement">
+    <dt>{{resourceService?.frmelmnts?.lbl?.livestockmanagement | transposeTerms: 'frmelmnts.lbl.livestockmanagement' : resourceService?.selectedLang}}</dt>
     <dd>
-      <span class="d-inline-block" *ngFor="let gradeLevel of metaData.gradeLevel; let isLast=last;">
-        {{gradeLevel}}<span *ngIf="!isLast">,&nbsp;</span> 
+      <span class="d-inline-block" *ngFor="let livestockmanagement of metaData.livestockmanagement; let isLast=last;">
+        {{livestockmanagement}}<span *ngIf="!isLast">,&nbsp;</span> 
       </span>
     </dd>
   </dl>
 
-  <dl class="sb-meta-data" *ngIf="metaData.subject">
-    <dt>{{resourceService?.frmelmnts?.lbl?.subject | transposeTerms: 'frmelmnts.lbl.subject': resourceService?.selectedLang}}</dt>
-    <dd>{{metaData.subject}}</dd>
+  <dl class="sb-meta-data" *ngIf="metaData.livestockspecies">
+    <dt>{{resourceService?.frmelmnts?.lbl?.livestockspecies | transposeTerms: 'frmelmnts.lbl.subject': resourceService?.selectedLang}}</dt>
+    <dd>{{metaData.livestockspecies}}</dd>
   </dl>
 
   <dl class="sb-meta-data" *ngIf="metaData.lastUpdatedOn">

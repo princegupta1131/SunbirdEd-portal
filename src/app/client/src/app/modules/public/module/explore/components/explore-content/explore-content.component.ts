@@ -166,8 +166,8 @@ export class ExploreContentComponent implements OnInit, OnDestroy, AfterViewInit
     }
     this.selectedFilters = filterData;
     const defaultFilters = _.reduce(filters, (collector: any, element) => {
-      if (element.code === 'board') {
-        collector.board = _.get(_.orderBy(element.range, ['index'], ['asc']), '[0].name') || '';
+      if (element.code === 'foodcrops') {
+        collector.foodcrops = _.get(_.orderBy(element.range, ['index'], ['asc']), '[0].name') || '';
       }
       return collector;
     }, {});
@@ -219,7 +219,7 @@ export class ExploreContentComponent implements OnInit, OnDestroy, AfterViewInit
     });
     const softConstraints = _.get(this.activatedRoute.snapshot, 'data.softConstraints') || {};
     if (this.queryParams.key) {
-      delete softConstraints['board'];
+      delete softConstraints['foodcrops'];
     }
     const option: any = {
       filters: _.omitBy(filters || {}, value => _.isArray(value) ? (!_.get(value, 'length') ? true : false) : false),
@@ -251,10 +251,137 @@ export class ExploreContentComponent implements OnInit, OnDestroy, AfterViewInit
     if (this.frameworkId) {
       option.params.framework = this.frameworkId;
     }
-    const sampleCategoryExists = [_.get(filters, 'board[0]'), _.get(filters, 'board'), _.get(filters, 'se_boards[0]'), _.get(filters, 'se_boards')].some(board => _.toLower(board).includes('/'));
+    const sampleCategoryExists = [_.get(filters, 'foodcrops[0]'), _.get(filters, 'foodcrops'), _.get(filters, 'foodcrops[0]'), _.get(filters, 'foodcrops')].some(foodcrops => _.toLower(foodcrops).includes('/'));
     if (sampleCategoryExists) {
-      option.filters.se_boards =  option.filters.se_boards.split('/')[0].trim();
+      option.filters.foodcrops =  option.filters.foodcrops.split('/')[0].trim();
     }
+    // let data = {
+    //   "id": "api.content.search",
+    //   "ver": "1.0",
+    //   "ts": "2023-10-10T13:56:50.374Z",
+    //   "params": {
+    //     "resmsgid": "dc3a4e60-6774-11ee-a1e6-236e810e887c",
+    //     "msgid": "6803be90-3c86-4964-a5db-fdb8b39dd9cc",
+    //     "status": "successful",
+    //     "err": null,
+    //     "errmsg": null
+    //   },
+    //   "responseCode": "OK",
+    //   "result": {
+    //     "count": 1,
+    //     "content": [
+    //       {
+    //         "trackable": {
+    //           "enabled": "No",
+    //           "autoBatch": "No"
+    //         },
+    //         "identifier": "do_113777389672423424171",
+    //         "primaryCategory": "Course Unit",
+    //         "channel": "0137541424673095687",
+    //         "name": "Course Unit",
+    //         "mimeType": "application/vnd.ekstep.content-collection",
+    //         "contentType": "CourseUnit",
+    //         "pkgVersion": 1,
+    //         "objectType": "Content",
+    //         "orgDetails": {
+    //           "email": null,
+    //           "orgName": "Sunbird Org"
+    //         }
+    //       }
+    //     ],
+    //     "facets": [
+    //       {
+    //         "values": [
+    //           {
+    //             "name": "grains",
+    //             "count": 9
+    //           },
+    //           {
+    //             "name": "horticulture",
+    //             "count": 32
+    //           }
+    //         ],
+    //         "name": "foodcrops"
+    //       },
+    //       {
+    //         "values": [
+    //           {
+    //             "name": "feedingandnutrition",
+    //             "count": 9
+    //           },
+    //           {
+    //             "name": "geneticsandselection",
+    //             "count": 32
+    //           }
+    //         ],
+    //         "name": "livestockmanagement"
+    //       },
+    //       {
+    //         "values": [
+    //           {
+    //             "name": "course unit",
+    //             "count": 1
+    //           }
+    //         ],
+    //         "name": "primaryCategory"
+    //       },
+    //       {
+    //         "values": [
+    //           {
+    //             "name": "crops",
+    //             "count": 9
+    //           },
+    //           {
+    //             "name": "pastures",
+    //             "count": 32
+    //           }
+    //         ],
+    //         "name": "commercialcrops"
+    //       },
+    //       {
+    //         "values": [
+    //           {
+    //             "name": "beefcattle",
+    //             "count": 9
+    //           },
+    //           {
+    //             "name": "bees",
+    //             "count": 32
+    //           }
+    //         ],
+    //         "name": "livestockspecies"
+    //       },
+    //       {
+    //         "values": [
+    //           {
+    //             "name": "diseases",
+    //             "count": 9
+    //           }
+    //         ],
+    //         "name": "animalwelfare"
+    //       },
+    //       {
+    //         "values": [
+    //           {
+    //             "name": "content",
+    //             "count": 1
+    //           }
+    //         ],
+    //         "name": "mediaType"
+    //       },
+    //       {
+    //         "values": [
+    //           {
+    //             "name": "application/vnd.ekstep.content-collection",
+    //             "count": 1
+    //           }
+    //         ],
+    //         "name": "mimeType"
+    //       }
+    //     ]
+    //   }
+    // }
+    // console.log('global-search-filter',data)
     this.searchService.contentSearch(option)
       .pipe(
         mergeMap(data => {

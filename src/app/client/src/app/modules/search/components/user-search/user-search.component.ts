@@ -169,9 +169,9 @@ export class UserSearchComponent implements OnInit, AfterViewInit, OnDestroy {
       filters: {
         'rootOrgId': this.rootOrgId,
         'profileUserType.type': this.queryParams.Usertype,
-        'framework.medium': this.queryParams.medium,
-        'framework.gradeLevel': this.queryParams.gradeLevel,
-        'framework.subject': this.queryParams.subject
+        'framework.commercialcrops': this.queryParams.commercialcrops,
+        'framework.livestockmanagement': this.queryParams.livestockmanagement,
+        'framework.livestockspecies': this.queryParams.livestockspecies
       },
       limit: this.pageLimit,
       pageNumber: this.pageNumber,

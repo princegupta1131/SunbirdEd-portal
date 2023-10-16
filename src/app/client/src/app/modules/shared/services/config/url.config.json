@@ -13,7 +13,12 @@
       "subject",
       "resourceType",
       "contentType",
-      "organisation"
+      "organisation",
+      "foodcrops",
+      "commercialcrops",
+      "livestockmanagement",
+      "livestockspecies",
+       "animalwelfare"
     ],
     "CourseSearchField": [
       "name",
@@ -30,7 +35,12 @@
       "se_boards",
       "se_subjects",
       "se_mediums",
-      "se_gradeLevels"
+      "se_gradeLevels",
+      "foodcrops",
+      "commercialcrops",
+      "livestockmanagement",
+      "livestockspecies",
+       "animalwelfare"
     ],
     "programSearch": {
       "fields": "rootOrgId,rootOrgName"

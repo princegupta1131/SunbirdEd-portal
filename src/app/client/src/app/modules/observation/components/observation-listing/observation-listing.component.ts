@@ -235,7 +235,7 @@ export class ObservationListingComponent
         identifier: value.solutionId,
         solutionId: value.solutionId,
         programId: value.programId,
-        medium: value.language,
+        commercialcrops: value.language,
         organization: value.creator,
         _id: value._id,
         subject: subject
@@ -243,7 +243,7 @@ export class ObservationListingComponent
       if (value.creator && value.creator.length) {
         const creator: any = [];
         creator.push(value.creator);
-        obj['gradeLevel'] = creator;
+        obj['livestockmanagement'] = creator;
       }
       result.push(obj);
       this.contentList = result;

@@ -25,9 +25,9 @@ export class UserFilterComponent implements OnInit {
   allSchools: any;
   allRoles: Array<RolesAndPermissions>;
   allUserType: object = {};
-  medium: object = {};
+  commercialcrops: object = {};
   class: object = {};
-  subject: object = {};
+  livestockspecies: object = {};
   inputData: any = {};
   showFilters = false;
   selectedDistrict: string;
@@ -114,20 +114,20 @@ export class UserFilterComponent implements OnInit {
     return this.frameworkService.frameworkData$.pipe(map((res) => {
       const categoryMasterList = _.cloneDeep(res.frameworkdata['defaultFramework'].categories);
       // Preparing data for multi-select filter
-      const medium: any = _.find(categoryMasterList, { code: 'medium' });
-      medium['label'] = medium.name;
-      medium['range'] = this.sortFilters(medium.terms);
-      this.medium = medium;
+      const commercialcrops: any = _.find(categoryMasterList, { code: 'commercialcrops' });
+      commercialcrops['label'] = commercialcrops.name;
+      commercialcrops['range'] = this.sortFilters(commercialcrops.terms);
+      this.commercialcrops = commercialcrops;
 
-      const gradeLevel: any = _.find(categoryMasterList, { code: 'gradeLevel' });
-      gradeLevel['label'] = gradeLevel.name;
-      gradeLevel['range'] = this.sortFilters(gradeLevel.terms);
-      this.class = gradeLevel;
+      const livestockmanagement: any = _.find(categoryMasterList, { code: 'livestockmanagement' });
+      livestockmanagement['label'] = livestockmanagement.name;
+      livestockmanagement['range'] = this.sortFilters(livestockmanagement.terms);
+      this.class = livestockmanagement;
 
-      const subject: any = _.find(categoryMasterList, { code: 'subject' });
-      subject['label'] = subject.name;
-      subject['range'] = this.sortFilters(subject.terms);
-      this.subject = subject;
+      const livestockspecies: any = _.find(categoryMasterList, { code: 'livestockspecies' });
+      livestockspecies['label'] = livestockspecies.name;
+      livestockspecies['range'] = this.sortFilters(livestockspecies.terms);
+      this.livestockspecies = livestockspecies;
       return 'Framework API success';
     }), catchError(e => of('Framework API error')));
   }

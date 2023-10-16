@@ -571,49 +571,59 @@ export class ViewAllComponent implements OnInit, OnDestroy, AfterViewInit {
     const facetsData = [];
     _.forEach(facets, (facet, key) => {
       switch (key) {
-        case 'board':
+        case 'foodcrops':
           const boardData = {
-            index: '1',
-            label: _.get(this.resourceService, 'frmelmnts.lbl.boards'),
-            placeholder: _.get(this.resourceService, 'frmelmnts.lbl.selectBoard'),
+            index: '2',
+            label: _.get(this.resourceService, 'frmelmnts.lbl.foodcrops'),
+            placeholder: _.get(this.resourceService, 'frmelmnts.lbl.selectFoodcrops'),
             values: facet,
             name: key
           };
           facetsData.push(boardData);
           break;
-        case 'medium':
+        case 'commercialcrops':
           const mediumData = {
-            index: '2',
-            label: _.get(this.resourceService, 'frmelmnts.lbl.medium'),
-            placeholder: _.get(this.resourceService, 'frmelmnts.lbl.selectMedium'),
+            index: '3',
+            label: _.get(this.resourceService, 'frmelmnts.lbl.commercialcrops'),
+            placeholder: _.get(this.resourceService, 'frmelmnts.lbl.selectCommercialcrops'),
             values: facet,
             name: key
           };
           facetsData.push(mediumData);
           break;
-        case 'gradeLevel':
+        case 'livestockmanagement':
           const gradeLevelData = {
             index: '3',
-            label: _.get(this.resourceService, 'frmelmnts.lbl.class'),
-            placeholder: _.get(this.resourceService, 'frmelmnts.lbl.selectClass'),
+            label: _.get(this.resourceService, 'frmelmnts.lbl.livestockmanagement'),
+            placeholder: _.get(this.resourceService, 'frmelmnts.lbl.selectLivestockmanagement'),
             values: facet,
             name: key
           };
           facetsData.push(gradeLevelData);
           break;
-        case 'subject':
-          const subjectData = {
-            index: '4',
-            label: _.get(this.resourceService, 'frmelmnts.lbl.subject'),
-            placeholder: _.get(this.resourceService, 'frmelmnts.lbl.selectSubject'),
-            values: facet,
-            name: key
-          };
-          facetsData.push(subjectData);
-          break;
+          case 'livestockspecies':
+            const subjectData = {
+              index: '4',
+              label: _.get(this.resourceService, 'frmelmnts.lbl.livestockspecies'),
+              placeholder: _.get(this.resourceService, 'frmelmnts.lbl.selectLivestockspecies'),
+              values: facet,
+              name: key
+            };
+            facetsData.push(subjectData);
+            break;
+            case 'animalwelfare':
+              const animalwelfaretData = {
+                index: '5',
+                label: _.get(this.resourceService, 'frmelmnts.lbl.animalwelfare'),
+                placeholder: _.get(this.resourceService, 'frmelmnts.lbl.selectAnimalwelfares'),
+                values: facet,
+                name: key
+              };
+              facetsData.push(animalwelfaretData);
+              break;
         case 'publisher':
           const publisherData = {
-            index: '5',
+            index: '6',
             label: _.get(this.resourceService, 'frmelmnts.lbl.publisher'),
             placeholder: _.get(this.resourceService, 'frmelmnts.lbl.selectPublisher'),
             values: facet,
@@ -623,7 +633,7 @@ export class ViewAllComponent implements OnInit, OnDestroy, AfterViewInit {
           break;
         case 'contentType':
           const contentTypeData = {
-            index: '6',
+            index: '7',
             label: _.get(this.resourceService, 'frmelmnts.lbl.contentType'),
             placeholder: _.get(this.resourceService, 'frmelmnts.lbl.selectContentType'),
             values: facet,

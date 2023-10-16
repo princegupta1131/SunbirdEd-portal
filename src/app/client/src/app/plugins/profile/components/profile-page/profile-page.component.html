@@ -165,30 +165,30 @@
     <div class="ui container">
       <div class="d-flex flex-jc-center flex-ai-center flex-dc" *ngIf="userProfile && userProfile.framework ">
         <div class="max-w-400 computer only">
-          <div class="mb-15 d-flex flex-jc-center" *ngIf="convertToString(userProfile.framework.board)">
-            <span class="fmedium white-space-nowrap">{{resourceService.frmelmnts.lbl.boards | transposeTerms: 'frmelmnts.lbl.boards' : resourceService?.selectedLang}} :</span>
+          <div class="mb-15 d-flex flex-jc-center" *ngIf="convertToString(userProfile.framework.foodcrops)">
+            <span class="fmedium white-space-nowrap">{{resourceService.frmelmnts.lbl.foodcrops | transposeTerms: 'frmelmnts.lbl.foodcrops' : resourceService?.selectedLang}} :</span>
             <span class="fmedium font-w-bold pl-4"
-              *ngIf="userProfile.framework">{{convertToString(userProfile.framework.board)}}</span>
+              *ngIf="userProfile.framework">{{convertToString(userProfile.framework.foodcrops)}}</span>
           </div>
-          <div class="mb-15 d-flex flex-jc-center" *ngIf="convertToString(userProfile.framework.medium)">
-            <span class="fmedium white-space-nowrap">{{resourceService.frmelmnts.lbl.medium | transposeTerms: 'frmelmnts.lbl.medium' : resourceService?.selectedLang}} :</span>
+          <div class="mb-15 d-flex flex-jc-center" *ngIf="convertToString(userProfile.framework.commercialcrops)">
+            <span class="fmedium white-space-nowrap">{{resourceService.frmelmnts.lbl.commercialcrops | transposeTerms: 'frmelmnts.lbl.commercialcrops' : resourceService?.selectedLang}} :</span>
             <span class="fmedium font-w-bold pl-4"
-              *ngIf="userProfile.framework">{{convertToString(userProfile.framework.medium)}}</span>
+              *ngIf="userProfile.framework">{{convertToString(userProfile.framework.commercialcrops)}}</span>
           </div>
-          <div class="mb-15 d-flex flex-jc-center" *ngIf="convertToString(userProfile.framework.gradeLevel)">
-            <span class="fmedium white-space-nowrap">{{resourceService.frmelmnts.lbl.classes | transposeTerms: 'frmelmnts.lbl.classes' : resourceService?.selectedLang}} :</span>
+          <div class="mb-15 d-flex flex-jc-center" *ngIf="convertToString(userProfile.framework.livestockmanagement)">
+            <span class="fmedium white-space-nowrap">{{resourceService.frmelmnts.lbl.livestockmanagement | transposeTerms: 'frmelmnts.lbl.livestockmanagement' : resourceService?.selectedLang}} :</span>
             <span class="fmedium font-w-bold pl-4"
-              *ngIf="userProfile.framework">{{convertToString(userProfile.framework.gradeLevel)}}</span>
+              *ngIf="userProfile.framework">{{convertToString(userProfile.framework.livestockmanagement)}}</span>
           </div>
-          <div class="d-flex flex-jc-center" *ngIf="convertToString(userProfile.framework.subject)">
-            <span class="fmedium white-space-nowrap">{{resourceService.frmelmnts.lbl.subjects | transposeTerms: 'frmelmnts.lbl.subjects' : resourceService?.selectedLang}} :</span>
+          <div class="d-flex flex-jc-center" *ngIf="convertToString(userProfile.framework.livestockspecies)">
+            <span class="fmedium white-space-nowrap">{{resourceService.frmelmnts.lbl.livestockspecies | transposeTerms: 'frmelmnts.lbl.livestockspecies' : resourceService?.selectedLang}} :</span>
             <span class="fmedium font-w-bold pl-4"
-              *ngIf="userProfile.framework">{{convertToString(userProfile.framework.subject)}}</span>
+              *ngIf="userProfile.framework">{{convertToString(userProfile.framework.livestockspecies)}}</span>
           </div>
         </div>
         <button class="sb-btn sb-btn-primary sb-btn-normal my-16 sb-btn-border computer only"
           appTelemetryInteract appOnlineOnly
-          [telemetryInteractEdata]="myFrameworkEditEdata" attr.aria-label="{{resourceService.frmelmnts.lbl.edit}} {{resourceService.frmelmnts.lbl.boards}},{{resourceService.frmelmnts.lbl.medium}},{{resourceService.frmelmnts.lbl.classes}},{{convertToString(userProfile.framework.gradeLevel)}},{{resourceService.frmelmnts.lbl.subjects}}"
+          [telemetryInteractEdata]="myFrameworkEditEdata" attr.aria-label="{{resourceService.frmelmnts.lbl.edit}} {{resourceService.frmelmnts.lbl.foodcrops}},{{resourceService.frmelmnts.lbl.commercialcrops}},{{resourceService.frmelmnts.lbl.livestockmanagement}},{{convertToString(userProfile.framework.livestockspecies)}},{{resourceService.frmelmnts.lbl.animalwelfare}}"
           (click)="showEdit = !showEdit" tabindex="0">{{resourceService.frmelmnts.lbl.edit}}</button>
       </div>
     </div>
@@ -197,24 +197,24 @@
     <!-- User info mobile view starts-->
     <div class="max-w-300 mobile only">
       <div class="mb-15 d-flex flex-ai-center flex-dc">
-        <span class="fmedium white-space-nowrap">{{resourceService.frmelmnts.lbl.boards | transposeTerms: 'frmelmnts.lbl.boards' : resourceService?.selectedLang}}:</span>
+        <span class="fmedium white-space-nowrap">{{resourceService.frmelmnts.lbl.foodcrops | transposeTerms: 'frmelmnts.lbl.foodcrops' : resourceService?.selectedLang}}:</span>
         <span class="fmedium font-w-bold text-center"
-          *ngIf="userProfile.framework">{{convertToString(userProfile.framework.board)}}</span>
+          *ngIf="userProfile.framework">{{convertToString(userProfile.framework.foodcrops)}}</span>
       </div>
       <div class="mb-15 d-flex flex-ai-center flex-dc">
-        <span class="fmedium white-space-nowrap">{{resourceService.frmelmnts.lbl.medium | transposeTerms: 'frmelmnts.lbl.medium' : resourceService?.selectedLang}} :</span>
+        <span class="fmedium white-space-nowrap">{{resourceService.frmelmnts.lbl.commercialcrops | transposeTerms: 'frmelmnts.lbl.commercialcrops' : resourceService?.selectedLang}} :</span>
         <span class="fmedium font-w-bold text-center"
-          *ngIf="userProfile.framework">{{convertToString(userProfile.framework.medium)}}</span>
+          *ngIf="userProfile.framework">{{convertToString(userProfile.framework.commercialcrops)}}</span>
       </div>
       <div class="mb-15 d-flex flex-ai-center flex-dc">
-        <span class="fmedium white-space-nowrap">{{resourceService.frmelmnts.lbl.classes | transposeTerms: 'frmelmnts.lbl.classes' : resourceService?.selectedLang}} :</span>
+        <span class="fmedium white-space-nowrap">{{resourceService.frmelmnts.lbl.livestockmanagement | transposeTerms: 'frmelmnts.lbl.livestockmanagement' : resourceService?.selectedLang}} :</span>
         <span class="fmedium font-w-bold text-center"
-          *ngIf="userProfile.framework">{{convertToString(userProfile.framework.gradeLevel)}}</span>
+          *ngIf="userProfile.framework">{{convertToString(userProfile.framework.livestockmanagement)}}</span>
       </div>
       <div class="mb-15 d-flex flex-ai-center flex-dc">
-        <span class="fmedium white-space-nowrap">{{resourceService.frmelmnts.lbl.subjects | transposeTerms: 'frmelmnts.lbl.subjects' : resourceService?.selectedLang}} :</span>
+        <span class="fmedium white-space-nowrap">{{resourceService.frmelmnts.lbl.livestockspecies | transposeTerms: 'frmelmnts.lbl.livestockspecies' : resourceService?.selectedLang}} :</span>
         <span class="fmedium font-w-bold text-center"
-          *ngIf="userProfile.framework">{{convertToString(userProfile.framework.subject)}}</span>
+          *ngIf="userProfile.framework">{{convertToString(userProfile.framework.livestockspecies)}}</span>
       </div>
       <div class="d-flex flex-ai-center flex-jc-center" appTelemetryInteract
         [telemetryInteractEdata]="myFrameworkEditEdata" tabindex="0"

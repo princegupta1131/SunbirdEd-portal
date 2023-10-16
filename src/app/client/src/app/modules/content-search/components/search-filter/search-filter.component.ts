@@ -27,7 +27,7 @@ export class SearchFilterComponent implements OnInit, OnDestroy {
   public selectedBoard: { label: string, value: string, selectedOption: string };
   public selectedOption: { label: string, value: string, selectedOption: string };
   public optionLabel = {
-    Publisher: _.get(this.resourceService, 'frmelmnts.lbl.publisher'), Board: _.get(this.resourceService, 'frmelmnts.lbl.boards')
+    Publisher: _.get(this.resourceService, 'frmelmnts.lbl.publisher'), foodcrops: 'foodcrops'
   };
   public boards: any[] = [];
   filterChangeEvent = new Subject();
@@ -57,7 +57,7 @@ export class SearchFilterComponent implements OnInit, OnDestroy {
     private cacheService: CacheService, private utilService: UtilService) { }
 
   get filterData() {
-    return _.get(this.pageData, 'metaData.filters') || ['medium', 'gradeLevel', 'board', 'channel', 'subject', 'audience', 'publisher', 'se_subjects', 'se_boards', 'se_gradeLevels', 'se_mediums'];
+    return _.get(this.pageData, 'metaData.filters') || ['commercialcrops', 'livestockmanagement', 'foodcrops', 'channel', 'livestockspecies','animalwelfare', 'audience', 'publisher', 'se_subjects', 'se_boards', 'se_gradeLevels', 'se_mediums'];
   }
 
   public getChannelId(index) {
@@ -106,7 +106,7 @@ export class SearchFilterComponent implements OnInit, OnDestroy {
       .pipe(
         switchMap(queryParams => {
           this.filterChange.emit({ status: 'FETCHING' });
-          let boardName = _.get(queryParams, 'board[0]') || _.get(this.boards, '[0]');
+          let boardName = _.get(queryParams, 'foodcrops[0]') || _.get(this.boards, '[0]');
           return zip(this.getFramework({ boardName }), this.getAudienceTypeFormConfig())
             .pipe(map(([filters, audienceTypeFilter]: [object, object]) => ({ ...filters, audience: audienceTypeFilter })));
         })
@@ -153,7 +153,7 @@ export class SearchFilterComponent implements OnInit, OnDestroy {
           filters = _.pick(filters || {}, this.filterData);
           this.filters = filters = this.sortFilters({ filters });
           this.updateBoardList();
-          this.updateFiltersList({ filters: _.omit(filters, 'board') });
+          this.updateFiltersList({ filters: _.omit(filters, 'foodcrops') });
           this.emitFilterChangeEvent(true);
           this.hardRefreshFilter();
         })
@@ -189,24 +189,24 @@ export class SearchFilterComponent implements OnInit, OnDestroy {
   }
 
   private updateBoardList() {
-    if (_.get(this.filters, 'board') || !_.get(this.filters, 'board.length')) {
+    if (_.get(this.filters, 'foodcrops') || !_.get(this.filters, 'foodcrops.length')) {
       this.emptyBoard = true;
     }
-    this.boards = this.allValues['board'] = this.filters.board || [];
+    this.boards = this.allValues['foodcrops'] = this.filters.foodcrops || [];
     this.boards = _.map(this.boards, node => ({
       name: node.name,
       value: node.name,
     }));
     this.optionData.push({
-      label: this.optionLabel.Board,
-      value: 'board',
+      label: this.optionLabel.foodcrops,
+      value: 'foodcrops',
       option: this.boards
     });
     this.optionData = _.uniqBy(this.optionData, 'label');
     if (this.boards.length) {
-      const selectedOption = _.find(this.boards, { name: _.get(this.queryFilters, 'board[0]') }) ||
-        _.find(this.boards, { name: _.get(this.defaultFilters, 'board[0]') }) || this.boards[0];
-      this.selectedBoard = { label: this.optionLabel.Board, value: 'board', selectedOption: _.get(selectedOption, 'name') };
+      const selectedOption = _.find(this.boards, { name: _.get(this.queryFilters, 'foodcrops[0]') }) ||
+        _.find(this.boards, { name: _.get(this.defaultFilters, 'foodcrops[0]') }) || this.boards[0];
+      this.selectedBoard = { label: this.optionLabel.foodcrops, value: 'foodcrops', selectedOption: _.get(selectedOption, 'name') };
       this.selectedOption = this.selectedBoard;
     }
   }
@@ -300,7 +300,7 @@ export class SearchFilterComponent implements OnInit, OnDestroy {
         return audience ? _.get(audience, 'searchFilter') : null;
       })));
     }
-    filters['board'] = _.get(this.selectedBoard, 'selectedOption') ? [this.selectedBoard.selectedOption] : [];
+    filters['foodcrops'] = _.get(this.selectedBoard, 'selectedOption') ? [this.selectedBoard.selectedOption] : [];
     filters['selectedTab'] = _.get(this.activatedRoute, 'snapshot.queryParams.selectedTab') || _.get(this.defaultTab, 'contentType') || 'textbook';
     return filters;
   }

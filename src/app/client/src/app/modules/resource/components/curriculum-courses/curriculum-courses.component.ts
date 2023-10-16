@@ -23,9 +23,9 @@ export class CurriculumCoursesComponent implements OnInit, OnDestroy {
   private unsubscribe$ = new Subject<void>();
   defaultBg = false;
   public defaultFilters = {
-    board: [],
-    gradeLevel: [],
-    medium: []
+    foodcrops: [],
+    livestockmanagement: [],
+    commercialcrops: []
   };
 
   public selectedCourse: {};

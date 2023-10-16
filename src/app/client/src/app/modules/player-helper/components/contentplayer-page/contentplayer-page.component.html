@@ -18,19 +18,19 @@
                 </mat-expansion-panel-header>
                 <div class="sb-mat-accordion__content">
                     <div class="training-relevant__class mb-4 sb-color-gray-400 fnormal"
-                        *ngIf="collectionData?.se_boards">
-                        <span>{{resourceService?.frmelmnts?.lbl?.board | transposeTerms: 'frmelmnts.lbl.board' : resourceService?.selectedLang}}:&nbsp;</span><span>{{
-                            collectionData.se_boards}}</span>
+                        *ngIf="collectionData?.foodcrops">
+                        <span>{{resourceService?.frmelmnts?.lbl?.foodcrops | transposeTerms: 'frmelmnts.lbl.foodcrops' : resourceService?.selectedLang}}:&nbsp;</span><span>{{
+                            collectionData.foodcrops}}</span>
                     </div>
                     <div class="training-relevant__medium mb-4 sb-color-gray-400 fnormal"
-                        *ngIf="collectionData?.se_mediums">
-                        <span>{{resourceService?.frmelmnts?.lbl?.medium  | transposeTerms: 'frmelmnts.lbl.medium' : resourceService?.selectedLang}}:&nbsp;</span><span>{{
-                            collectionData?.se_mediums?.join(', ')}}</span>
+                        *ngIf="collectionData?.commercialcrops">
+                        <span>{{resourceService?.frmelmnts?.lbl?.commercialcrops  | transposeTerms: 'frmelmnts.lbl.commercialcrops' : resourceService?.selectedLang}}:&nbsp;</span><span>{{
+                            collectionData?.commercialcrops?.join(', ')}}</span>
                     </div>
                     <div class="training-relevant__subject mb-4 sb-color-gray-400 fnormal"
-                        *ngIf="collectionData?.se_gradeLevels">
-                        <span>{{resourceService?.frmelmnts?.lbl?.class | transposeTerms: 'frmelmnts.lbl.class' : resourceService?.selectedLang}}:&nbsp;</span><span>{{
-                            collectionData.se_gradeLevels}}</span>
+                        *ngIf="collectionData?.livestockmanagement">
+                        <span>{{resourceService?.frmelmnts?.lbl?.livestockmanagement | transposeTerms: 'frmelmnts.lbl.livestockmanagement' : resourceService?.selectedLang}}:&nbsp;</span><span>{{
+                            collectionData.livestockmanagement}}</span>
                     </div>
                     <div class="training-relevant__medium mb-4 sb-color-gray-400 fnormal"
                         *ngIf="collectionData?.audience">

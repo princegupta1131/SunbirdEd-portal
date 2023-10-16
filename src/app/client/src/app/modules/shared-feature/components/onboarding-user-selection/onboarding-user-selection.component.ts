@@ -70,6 +70,7 @@ export class OnboardingUserSelectionComponent implements OnInit, OnDestroy {
     return merge(this.getFormConfig().pipe(
       tap((fields: object[]) => {
         this.guestList = this.prepareGuestList(fields);
+        console.log('checkUserType',this.guestList)
       })
     ), this.updateUserSelection()).pipe(takeUntil(this.unsubscribe$));
   }

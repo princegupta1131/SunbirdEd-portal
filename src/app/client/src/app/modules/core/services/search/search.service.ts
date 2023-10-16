@@ -286,17 +286,17 @@ export class SearchService {
   * @param {option}
   **/
   public updateOption(option: any) {
-    if (_.get(option, 'data.request.filters.board')) {
-      option.data.request.filters['se_boards'] = option.data.request.filters.board;
-      delete option.data.request.filters.board;
+    if (_.get(option, 'data.request.filters.foodcrops')) {
+      option.data.request.filters['foodcrops'] = option.data.request.filters.foodcrops;
+      delete option.data.request.filters.foodcrops;
     }
-    if (_.get(option, 'data.request.filters.gradeLevel')) {
-      option.data.request.filters['se_gradeLevels'] = option.data.request.filters.gradeLevel;
-      delete option.data.request.filters.gradeLevel;
+    if (_.get(option, 'data.request.filters.livestockspecies')) {
+      option.data.request.filters['livestockspecies'] = option.data.request.filters.livestockspecies;
+      delete option.data.request.filters.livestockspecies;
     }
-    if (_.get(option, 'data.request.filters.medium')) {
-      option.data.request.filters['se_mediums'] = option.data.request.filters.medium;
-      delete option.data.request.filters.medium;
+    if (_.get(option, 'data.request.filters.commercialcrops')) {
+      option.data.request.filters['commercialcrops'] = option.data.request.filters.commercialcrops;
+      delete option.data.request.filters.commercialcrops;
     }
     // if (_.get(option, 'data.request.filters.subject')) {
     //   option.data.request.filters['se_subjects'] = option.data.request.filters.subject;
@@ -501,30 +501,36 @@ export class SearchService {
   updateFacetsData(facets) {
     return _.map(facets, facet => {
       switch (_.get(facet, 'name')) {
-        case 'se_boards':
-        case 'board':
+        case 'foodcrops':
+        case 'se_foodcrops':
           facet['index'] = '2';
-          facet['label'] = this.resourceService.frmelmnts.lbl.boards;
-          facet['placeholder'] = this.resourceService.frmelmnts.lbl.selectBoard;
+          facet['label'] = 'foodcrops'
+          facet['placeholder'] = 'select foodcrops'
           break;
-        case 'se_mediums':
-        case 'medium':
+        case 'commercialcrops':
+        case 'se_commercialcrops':
           facet['index'] = '3';
-          facet['label'] = this.resourceService.frmelmnts.lbl.medium;
-          facet['placeholder'] = this.resourceService.frmelmnts.lbl.selectMedium;
+          facet['label'] = 'commercialcrops'
+          facet['placeholder'] = 'Select Commercialcrops';
           break;
-        case 'se_gradeLevels':
-        case 'gradeLevel':
+        case 'livestockmanagement':
+        case 'se_livestockmanagement':
           facet['index'] = '4';
-          facet['label'] = this.resourceService.frmelmnts.lbl.class;
-          facet['placeholder'] = this.resourceService.frmelmnts.lbl.selectClass;
+          facet['label'] = 'livestockmanagement';
+          facet['placeholder'] = 'Selct livestockmanagement ';
           break;
-        case 'se_subjects':
-        case 'subject':
+        case 'livestockspecies':
+        case 'se_livestockspecies':
           facet['index'] = '5';
-          facet['label'] = this.resourceService.frmelmnts.lbl.subject;
-          facet['placeholder'] = this.resourceService.frmelmnts.lbl.selectSubject;
+          facet['label'] = 'livestockspecies';
+          facet['placeholder'] = 'Select livestockspecies';
           break;
+        case 'animalwelfare':
+            case 'se_animalwelfare':
+              facet['index'] = '5';
+              facet['label'] = 'animalwelfare';
+              facet['placeholder'] = 'Select animalwelfare';
+        break;
         case 'publisher':
           facet['index'] = '6';
           facet['label'] = this.resourceService.frmelmnts.lbl.publisher;
