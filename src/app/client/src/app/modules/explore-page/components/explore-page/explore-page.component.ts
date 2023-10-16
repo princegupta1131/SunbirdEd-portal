@@ -59,6 +59,7 @@ export class ExplorePageComponent implements OnInit, OnDestroy, AfterViewInit {
     downloadIdentifier: string;
     contentDownloadStatus = {};
     isConnected = true;
+    dataThemeAttribute: string;
     private _facets$ = new Subject();
     public showBatchInfo = false;
     public enrolledCourses: Array<any>;
@@ -742,10 +743,12 @@ export class ExplorePageComponent implements OnInit, OnDestroy, AfterViewInit {
                     if (currentUserType && currentBoard && data && data[currentBoard] &&
                         data[currentBoard][currentUserType]) {
                         this.showTargetedCategory = true;
+                        this.dataThemeAttribute = document.documentElement.getAttribute('data-mode');
+                        const pillBgColor = this.dataThemeAttribute === 'light'? "rgba(255,255,255,1)" :"rgba(36,37,36,1)" 
                         this.targetedCategory = data[currentBoard][currentUserType];
                         this.targetedCategorytheme = {
                             "iconBgColor": "rgba(255,255,255,1)",
-                            "pillBgColor": "rgba(255,255,255,1)"
+                            "pillBgColor": pillBgColor
                         }
                         this.Categorytheme = {
                             "iconBgColor": "rgba(255,0,0,0)",
@@ -766,11 +769,10 @@ export class ExplorePageComponent implements OnInit, OnDestroy, AfterViewInit {
             const preferences = _.pick(searchOptions.filters, requiredProps);
             section.apiConfig.req.request.filters = { ...section.apiConfig.req.request.filters, ...preferences };
         }
-
         return {
             isEnabled: Boolean(_.get(section, 'isEnabled')),
             searchRequest: _.get(section, 'apiConfig.req'),
-            title: get(this.resourceService, section.title) || section.defaultTitle
+            title: get(this.resourceService, section.title) ? section.title : section.defaultTitle
         };
     }
 
@@ -1274,6 +1276,11 @@ export class ExplorePageComponent implements OnInit, OnDestroy, AfterViewInit {
         let _sectionTitle = this.utilService.transposeTerms(get(this.resourceService, title), get(this.resourceService, title) || '', this.resourceService.selectedLang);
         return get(this.resourceService, 'frmelmnts.lbl.browseBy') + ' ' + _sectionTitle;
 
+    }
+
+    getContentSectionTitle(title) {
+        let _sectionTitle = this.utilService.transposeTerms(get(this.resourceService, title), get(this.resourceService, title) || '', this.resourceService.selectedLang) || title;
+        return _sectionTitle;
     }
 
     getSectionCategoryTitle(title) {

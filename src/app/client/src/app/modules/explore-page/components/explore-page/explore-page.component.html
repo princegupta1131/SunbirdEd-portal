@@ -151,14 +151,14 @@
               [pillsMultiRow]="'auto_responsive'" [pillTextElipsis]="'two_line'"
               (select)="handleTargetedpillSelected($event)">
               <sb-pill-item *ngFor="let pillData of targetedCategory" [name]="(pillData?.icon?.web ? pillData?.name : '') | titlecase"
-              [icon]="pillData?.icon?.web" [value]="(pillData?.icon?.web ? pillData : '')" [theme]="(pillData?.icon?.web ? targetedCategorytheme : Categorytheme)"></sb-pill-item>
+              [icon]="pillData?.icon?.web" [value]="(pillData?.icon?.web ? pillData : '')" [theme]="(pillData?.icon?.web ? (targetedCategorytheme | async) : Categorytheme)"></sb-pill-item>
             </sb-pills-grid>
             <hr class="section-hr my-32" />
           </div>
           <div *ngIf="getSelectedTab() === 'home'">
             <div *ngFor="let section of contentSections" class="pl-16">
               <sb-content-section *ngIf="section?.isEnabled" (cardClick)="playContent($event, section?.title)"
-                [sortBy]="section?.apiConfig?.sortBy" [searchRequest]="section?.searchRequest" [title]="section?.title"
+                [sortBy]="section?.apiConfig?.sortBy" [searchRequest]="section?.searchRequest" [title]="getContentSectionTitle(section?.title)"
                 [layoutConfig]="layoutConfiguration" (viewMoreClick)="viewAll($event, section)"
                 [viewMoreButtonText]="resourceService?.frmelmnts?.lnk?.viewall">
               </sb-content-section>
@@ -249,7 +249,7 @@
 <app-modal-wrapper *ngIf="showEdit" [config]="{disableClose: false, panelClass: ['overflow-visible', 'material-modal']}">
   <ng-template sbModalContent let-data>
     <app-popup [dialogProps]="data" [formInput]="userPreference?.framework" [showCloseIcon]="true"
-      [buttonLabel]="resourceService?.frmelmnts?.btn?.submit" [isPreference]="true" [isGuestUser]="true"
+      [buttonLabel]="resourceService?.frmelmnts?.btn?.submit" [isPreference]="true" [isGuestUser]="true" [hashId]="channelId"
       (submit)="updateProfile($event)" (close)="showEdit = !showEdit">
     </app-popup>
   </ng-template>
