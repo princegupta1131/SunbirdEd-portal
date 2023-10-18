@@ -9,6 +9,7 @@ const _                                     = require('lodash');
 const uuidv1                                = require('uuid/v1');
 const { logger }                            = require('@project-sunbird/logger');
 const { sendRequest }                       = require('./httpRequestHandler');
+const session = require('express-session');
 
 const SUNBIRD_DEFAULT_TTL                   = require('./environmentVariablesHelper.js').sunbird_session_ttl;
 const SUNBIRD_ANONYMOUS_TTL                 = require('./environmentVariablesHelper.js').sunbird_anonymous_session_ttl;
@@ -27,6 +28,7 @@ const KONG_ANONYMOUS_DEVICE_REGISTER_API    = require('./environmentVariablesHel
 const BLACKLISTED_URL                       = ['/service/health', '/health', '/assets/images', '/discussion'];
 const KONG_ACCESS_TOKEN                     = 'userAccessToken';
 const KONG_DEVICE_BEARER_TOKEN              = 'apiBearerToken';
+const rbacAuth = require('../helpers/rbacAuth.js');
 
 /**
  * @param  { Object } req - API Request object
@@ -114,6 +116,7 @@ const registerDeviceWithKong = () => {
               next();
             }
           });
+          console.log(session, 'sonu-session-log')
         }).catch((err) => {
           logger.error({
             'id': 'api.kong.tokenManager', 'ts': new Date(),
@@ -142,6 +145,8 @@ const registerDeviceWithKong = () => {
               next();
             }
           });
+          _log(session, 'sonu-session-log2')
+
         });
       } else {
         if (KONG_DEVICE_REGISTER_ANONYMOUS_TOKEN === 'true') {
@@ -371,6 +376,7 @@ const generateLoggedInKongToken = (req, cb) => {
                 cb();
               }
             });
+            _log(session, 'sonu-session-log2')
           } else {
             _log(req, 'KONG_TOKEN bearer_token_logged_in :: non successful logged in bearer token generated failed for session id ' + _.get(req, 'sessionID') || 'no_key');
             req.session[KONG_DEVICE_BEARER_TOKEN] = KONG_LOGGEDIN_FALLBACK_TOKEN;
@@ -384,6 +390,7 @@ const generateLoggedInKongToken = (req, cb) => {
                 cb();
               }
             });
+            _log(session, 'sonu-session-log3')
           }
         }).catch((error) => {
           _log(req, 'KONG_TOKEN bearer_token_logged_in :: send request logged in bearer token generated failed for session id ' + _.get(req, 'sessionID') || 'no_key');
@@ -399,6 +406,7 @@ const generateLoggedInKongToken = (req, cb) => {
             }
           });
         });
+        _log(session, 'sonu-session-log4')
       } catch (error) {
         throw new Error(error);
       }
@@ -416,6 +424,7 @@ const generateLoggedInKongToken = (req, cb) => {
         }
       });
     }
+    _log(session, 'sonu-session-log5')
   } else {
     _log(req, 'KONG_TOKEN bearer_token_logged_in :: URL blacklisted');
     cb();
@@ -449,6 +458,9 @@ const getBearerToken = (req) => {
  * @returns { String } Portal x-auth token
  */
  const getAuthToken = (req) => {
+ rbacAuth.setAuthToken(req);
+// rbacAuth.setAuthToken("eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6ImFjY2Vzc3YxX2tleTEifQ.eyJhdWQiOiJodHRwczovL3N0YWdpbmcuc3VuYmlyZGVkLm9yZy9hdXRoL3JlYWxtcy9zdW5iaXJkIiwic3ViIjoiOWJiODg0ZmMtOGE1Ni00NzI3LTk1MjItMjVhN2Q1YjhlYTA2Iiwicm9sZXMiOlt7InJvbGUiOiJQVUJMSUMiLCJzY29wZSI6W119XSwiaXNzIjoiaHR0cHM6Ly9zdGFnaW5nLnN1bmJpcmRlZC5vcmcvYXV0aC9yZWFsbXMvc3VuYmlyZCIsInR5cCI6IkJlYXJlciIsImV4cCI6MTY5MDI4NTQxMywiaWF0IjoxNjkwMTk5MDEzfQ.KLbkyFrN0iQ_qShAwRWWl6IIpP0e_CQN8ipq0CivXpl_YtbmmWvSVQGq7QRc8PmYGnv_OJuh9BgTezS7cb5_jV-829aF5WSd0HUsls7SOHXeX5zbD1ulSMpr9yca-dEc2P94GRDs3WG5xJt_PTfwYP6yzM9GWZL0oA0PpQrQ11zM4O_llsx699nDs-wRJtO7Yvhdfyx5mWnnJXU-N87-PTLJUYUb6ffNJejySD9HrTUmMkOU9AdeD3yVWBDafOTJTgBCS5s9BNpaecTYm1AbJevuEpMhkAAA8eDwpd_evSdgSp06NIlTLHlQblkdHXBqTktTpboIWXhn0DWtBiunpw");
+//  return "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6ImFjY2Vzc3YxX2tleTEifQ.eyJhdWQiOiJodHRwczovL3N0YWdpbmcuc3VuYmlyZGVkLm9yZy9hdXRoL3JlYWxtcy9zdW5iaXJkIiwic3ViIjoiOWJiODg0ZmMtOGE1Ni00NzI3LTk1MjItMjVhN2Q1YjhlYTA2Iiwicm9sZXMiOlt7InJvbGUiOiJQVUJMSUMiLCJzY29wZSI6W119XSwiaXNzIjoiaHR0cHM6Ly9zdGFnaW5nLnN1bmJpcmRlZC5vcmcvYXV0aC9yZWFsbXMvc3VuYmlyZCIsInR5cCI6IkJlYXJlciIsImV4cCI6MTY5MDI4NTQxMywiaWF0IjoxNjkwMTk5MDEzfQ.KLbkyFrN0iQ_qShAwRWWl6IIpP0e_CQN8ipq0CivXpl_YtbmmWvSVQGq7QRc8PmYGnv_OJuh9BgTezS7cb5_jV-829aF5WSd0HUsls7SOHXeX5zbD1ulSMpr9yca-dEc2P94GRDs3WG5xJt_PTfwYP6yzM9GWZL0oA0PpQrQ11zM4O_llsx699nDs-wRJtO7Yvhdfyx5mWnnJXU-N87-PTLJUYUb6ffNJejySD9HrTUmMkOU9AdeD3yVWBDafOTJTgBCS5s9BNpaecTYm1AbJevuEpMhkAAA8eDwpd_evSdgSp06NIlTLHlQblkdHXBqTktTpboIWXhn0DWtBiunpw";
   return KONG_DEVICE_REGISTER_TOKEN === 'true' ?
     _.get(req, 'session.' + KONG_ACCESS_TOKEN) : req.kauth.grant.access_token.token;
 };

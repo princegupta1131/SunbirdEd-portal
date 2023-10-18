@@ -23,11 +23,12 @@ const cacheConfig = {
   store: envHelper.sunbird_cache_store,
   ttl: envHelper.sunbird_cache_ttl
 }
-
+const rbacAuth = require('../helpers/rbacAuth.js');
 const apiInterceptor = new ApiInterceptor(keyCloakConfig, cacheConfig, [`${envHelper.PORTAL_AUTH_SERVER_URL}/realms/${envHelper.KEY_CLOAK_REALM}`])
 
 const decorateRequestHeaders = function (upstreamUrl = "") {
   return function (proxyReqOpts, srcReq) {
+    srcReq.kauth = rbacAuth.getAuthToken().kauth;
     var channel = _.get(srcReq, 'session.rootOrghashTagId') || _.get(srcReq, 'headers.X-Channel-Id') || envHelper.DEFAULT_CHANNEL
     var sessionId = _.get(srcReq, 'headers.x-session-id') || _.get(srcReq, 'sessionID');
     proxyReqOpts.headers['X-Session-Id'] = sessionId;
@@ -51,10 +52,28 @@ const decorateRequestHeaders = function (upstreamUrl = "") {
       proxyReqOpts.headers['x-authenticated-user-token'] =  getAuthToken(srcReq)
       proxyReqOpts.headers['x-auth-token'] =  getAuthToken(srcReq)
     }
+
+    // if (srcReq.kauth && srcReq.kauth.grant && srcReq.kauth.grant.access_token &&
+    //   srcReq.kauth.grant.access_token.token) {
+      // proxyReqOpts.headers['x-authenticated-user-token'] ="eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6ImFjY2Vzc3YxX2tleTEifQ.eyJhdWQiOiJodHRwczovL3N0YWdpbmcuc3VuYmlyZGVkLm9yZy9hdXRoL3JlYWxtcy9zdW5iaXJkIiwic3ViIjoiOWJiODg0ZmMtOGE1Ni00NzI3LTk1MjItMjVhN2Q1YjhlYTA2Iiwicm9sZXMiOlt7InJvbGUiOiJQVUJMSUMiLCJzY29wZSI6W119XSwiaXNzIjoiaHR0cHM6Ly9zdGFnaW5nLnN1bmJpcmRlZC5vcmcvYXV0aC9yZWFsbXMvc3VuYmlyZCIsInR5cCI6IkJlYXJlciIsImV4cCI6MTY5MDI4NTQxMywiaWF0IjoxNjkwMTk5MDEzfQ.KLbkyFrN0iQ_qShAwRWWl6IIpP0e_CQN8ipq0CivXpl_YtbmmWvSVQGq7QRc8PmYGnv_OJuh9BgTezS7cb5_jV-829aF5WSd0HUsls7SOHXeX5zbD1ulSMpr9yca-dEc2P94GRDs3WG5xJt_PTfwYP6yzM9GWZL0oA0PpQrQ11zM4O_llsx699nDs-wRJtO7Yvhdfyx5mWnnJXU-N87-PTLJUYUb6ffNJejySD9HrTUmMkOU9AdeD3yVWBDafOTJTgBCS5s9BNpaecTYm1AbJevuEpMhkAAA8eDwpd_evSdgSp06NIlTLHlQblkdHXBqTktTpboIWXhn0DWtBiunpw"
+      // proxyReqOpts.headers['x-auth-token'] =  "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6ImFjY2Vzc3YxX2tleTEifQ.eyJhdWQiOiJodHRwczovL3N0YWdpbmcuc3VuYmlyZGVkLm9yZy9hdXRoL3JlYWxtcy9zdW5iaXJkIiwic3ViIjoiOWJiODg0ZmMtOGE1Ni00NzI3LTk1MjItMjVhN2Q1YjhlYTA2Iiwicm9sZXMiOlt7InJvbGUiOiJQVUJMSUMiLCJzY29wZSI6W119XSwiaXNzIjoiaHR0cHM6Ly9zdGFnaW5nLnN1bmJpcmRlZC5vcmcvYXV0aC9yZWFsbXMvc3VuYmlyZCIsInR5cCI6IkJlYXJlciIsImV4cCI6MTY5MDI4NTQxMywiaWF0IjoxNjkwMTk5MDEzfQ.KLbkyFrN0iQ_qShAwRWWl6IIpP0e_CQN8ipq0CivXpl_YtbmmWvSVQGq7QRc8PmYGnv_OJuh9BgTezS7cb5_jV-829aF5WSd0HUsls7SOHXeX5zbD1ulSMpr9yca-dEc2P94GRDs3WG5xJt_PTfwYP6yzM9GWZL0oA0PpQrQ11zM4O_llsx699nDs-wRJtO7Yvhdfyx5mWnnJXU-N87-PTLJUYUb6ffNJejySD9HrTUmMkOU9AdeD3yVWBDafOTJTgBCS5s9BNpaecTYm1AbJevuEpMhkAAA8eDwpd_evSdgSp06NIlTLHlQblkdHXBqTktTpboIWXhn0DWtBiunpw"
+    // }
+    // if (rbacAuth.getAuthToken()) {
+    //   console.log('xrbacToken',rbacAuth.getAuthToken() )
+    //   proxyReqOpts.headers['x-authenticated-user-token'] =  getAuthToken(srcReq)
+    //   proxyReqOpts.headers['x-auth-token'] =  getAuthToken(srcReq)
+    //   console.log('proxyResult', proxyReqOpts.headers);
+    // }
+    // else if(rbacAuth.getAuthToken()) {
+    //   proxyReqOpts.headers['x-authenticated-user-token'] =  grbacAuth.getAuthToken();
+    //   proxyReqOpts.headers['x-auth-token'] = rbacAuth.getAuthToken();
+    // }
     proxyReqOpts.headers.Authorization = 'Bearer ' + getBearerToken(srcReq);
     proxyReqOpts.rejectUnauthorized = false
     proxyReqOpts.agent = upstreamUrl.startsWith('https') ? httpsAgent : httpAgent;
     proxyReqOpts.headers['connection'] = 'keep-alive';
+    console.log('proxyyyyyyy',proxyReqOpts)
+
     // logger.info({
     //   URL: srcReq.url,
     //   body: reqBody.length > 500 ? "" : reqBody,
@@ -147,7 +166,8 @@ function verifyToken () {
   }
 }
 function validateUserToken (req, res, next) {
-  var token =  getAuthToken(req)
+  var token =  rbacAuth.getAuthToken().kauth.grant.access_token.token;
+  // var token =  getAuthToken(req)
   if (!token) {
     return Promise.reject({
       err: 'TOKEN_MISSING',

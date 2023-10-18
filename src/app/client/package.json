@@ -21,7 +21,7 @@
     "test:ci": "jest --ci --collectCoverage=true --coverageReporters=lcov --forceExit --detectOpenHandles --maxWorkers=2",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "compodoc": "./node_modules/.bin/compodoc -p tsconfig.json -s",
+    "compodoc": "npx compodoc -p tsconfig.json -s",
     "test-coverage": "./node_modules/jest/bin/jest.js --clearCache && node --max_old_space_size=1024 ./node_modules/jest/bin/jest.js --silent --ci --collectCoverage=true --coverageReporters=lcov --detectOpenHandles --forceExit=true",
     "build-cdn": "node --max_old_space_size=8096 ./node_modules/@angular/cli/bin/ng build --configuration production --progress=false --outputPath=./../dist-cdn",
     "inject-cdn-fallback": "gulp inject:cdnFallBack:script",

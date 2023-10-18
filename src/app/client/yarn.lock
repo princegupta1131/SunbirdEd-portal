@@ -2319,7 +2319,7 @@
 
 "@project-sunbird/common-consumption@6.0.0":
   version "6.0.0"
-  resolved "https://registry.npmjs.org/@project-sunbird/common-consumption/-/common-consumption-6.0.0.tgz#8ec0154453ebbcee68ec526683bcc4d00b9cc67e"
+  resolved "https://registry.yarnpkg.com/@project-sunbird/common-consumption/-/common-consumption-6.0.0.tgz#8ec0154453ebbcee68ec526683bcc4d00b9cc67e"
   integrity sha512-qjF4VzUGi0J5jYNtKxOz9w3EmE0PcvZrgd3T5e0EBXeJQmwxGLtlVlcrmgxcsagGV/kZVSn7osdQWJlKpHxx5w==
   dependencies:
     tslib "^2.3.0"

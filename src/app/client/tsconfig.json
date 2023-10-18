@@ -99,5 +99,6 @@
   },
   "exclude": [
     "**/*.spec.data.ts"
-  ]
+  ],
+  "include": ["../../../src/app/client"],
 }
