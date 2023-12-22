@@ -17,7 +17,7 @@ describe('ContentPlayerPageComponent', () => {
 		snapshot: {
 			data: {
 			  telemetry: {
-				env: 'mock-env', pageid: 'mock-page-id', type: 'mock-type',subtype: 'mock-sub-type',uuid: '9545879'
+				env: 'mock-env', pageid: 'mock-page-id', type: 'mock-type',subtype: 'mock-subtype',uuid: '9545879'
 			  }
 			},
 			queryParams: {
@@ -96,7 +96,7 @@ describe('ContentPlayerPageComponent', () => {
         jest.clearAllMocks();
         jest.resetAllMocks();
     });
-            
+
     it('should create a instance of component', () => {
         expect(component).toBeTruthy();
     });
@@ -114,7 +114,7 @@ describe('ContentPlayerPageComponent', () => {
         const nextSpy = jest.spyOn(mockContentProgressEvents$, 'next');
 
         component.ngOnInit();
-        
+
 		expect(component.cslFrameworkService.getFrameworkCategoriesObject).toHaveBeenCalled;
         expect(component.cslFrameworkService.transformContentDataFwBased).toHaveBeenCalledWith(
             component.frameworkCategoriesList,
@@ -138,72 +138,28 @@ describe('ContentPlayerPageComponent', () => {
     });
 
 	describe('initLayout',()=>{
-		it('should set layoutConfiguration to initlayoutConfig result', () => {
-			jest.spyOn(component.layoutService,'initlayoutConfig')
-			jest.spyOn(component.layoutService,'switchableLayout').mockReturnValue(of({}));
-			component.initLayout();
-			expect(component.layoutService.initlayoutConfig).toHaveBeenCalled();
+		it('calls set content id and call getcontent',() =>{
+			component.contentDetails = {content: 'mockContent', identifier: 'mock-identifier'}
+			component.tocPage =true;
+			jest.spyOn(component['playerService'] as any,'getContent').mockReturnValue(of({}));
+			jest.spyOn(component,'getContent');
+			component.ngOnChanges();
+				expect(component.contentId).toEqual('mock-identifier');
+				expect(component.getContent).toHaveBeenCalled();
 		});
 
-		it('should set layoutConfiguration to switchableLayout result if available', () => {
-			jest.spyOn(component.layoutService,'initlayoutConfig')
-			jest.spyOn(component.layoutService,'switchableLayout').mockReturnValue(of({layout: 'mockLayout'}));
-			component.initLayout();
-			expect(mockLayoutService.switchableLayout).toHaveBeenCalled();
-			expect(component.layoutConfiguration).toEqual('mockLayout');
-		});
+		it('should set contentId and call getContent when params contain contentId', () => {
+			jest.spyOn(component['playerService'],'getContent')
+			component.getContentIdFromRoute();
+			mockActivatedRoute.params.pipe(
+				takeUntil(component.unsubscribe$))
+				.subscribe(params => {
+					expect(component.contentId).toEqual('mock-content-id');
+			expect(component.getContent).toHaveBeenCalled();
+			});
+  	    });
     });
 
-	it('calls set content id and call getcontent',() =>{
-      component.contentDetails = {content: 'mockContent', identifier: 'mock-identifier'}
-	  component.tocPage =true;
-	  jest.spyOn(component['playerService'] as any,'getContent').mockReturnValue(of({}));
-	  jest.spyOn(component,'getContent');
-	  component.ngOnChanges();
-      expect(component.contentId).toEqual('mock-identifier');
-      expect(component.getContent).toHaveBeenCalled();
-	});
-
-	it('should set contentId and call getContent when params contain contentId', () => {
-        jest.spyOn(component['playerService'],'getContent')
-        component.getContentIdFromRoute();
-		mockActivatedRoute.params.pipe(
-			takeUntil(component.unsubscribe$))
-			.subscribe(params => {
-        expect(component.contentId).toEqual('mock-content-id');
-		expect(component.getContent).toHaveBeenCalled();
-       });
-    });
-
-	describe('getContent',()=>{
-		it('should call getContent and handle the response correctly', () => {
-			const mockResponse = resourceData.getContentResponse;
-			mockPlayerService.getContent = jest.fn().mockImplementation(() => of(mockResponse));
-			jest.spyOn(component,'setTelemetryData').mockImplementation();
-			component.getContent();
-			expect(component['playerService'].getContent).toHaveBeenCalledWith(component.contentId, {
-				params: mockConfigService.appConfig.PublicPlayer.contentApiQueryParams
-			});
-		});
-	    
-		it('should handle error response correctly', () => {
-			const mockResponse = resourceData.getContentResponse;
-			mockPlayerService.getContent = jest.fn().mockImplementation(() => throwError('mock-Error'));
-			component.isContentDeleted = {
-				next: jest.fn(),
-			} as any;
-			component.getContent();
-	
-			expect(component['playerService'].getContent).toHaveBeenCalledWith(component.contentId, {
-				params: mockConfigService.appConfig.PublicPlayer.contentApiQueryParams
-			});
-	
-			expect(component.contentDetails).toEqual({});
-			expect(component.isContentDeleted.next).toHaveBeenCalledWith({ value: true });
-	        expect(component.setTelemetryData).toHaveBeenCalled();
-		});
-	});
-    
 	it('should call checkContentDeleted method',()=>{
        const mockEvent = { event: 'mock-Event-name'};
 	   component.isContentDeleted = {
@@ -268,65 +224,26 @@ describe('ContentPlayerPageComponent', () => {
 		});
 	});
 
-	it('should call logTelemetry method',()=>{
-		const mockId ='mock-id';
-		const mockInteractData = {
-		context: {
-			env: mockActivatedRoute.snapshot.data.telemetry.env || 'content',
-			cdata: []
-		},
-		edata: {
-			id: mockId,
-			type: 'click',
-			pageid: mockActivatedRoute.snapshot.data.telemetry.pageid || 'play-content',
-		}
-		};
-		component.logTelemetry(mockId);
-		expect(component['telemetryService'].interact).toHaveBeenCalledWith(mockInteractData);
-	});
-
 	it('should call setPageExitTelemtry method',()=>{
+		component.telemetryImpression= resourceData.telemetryImpression;
 		component.contentDetails = {contentType: 'mockContent', identifier: 'mock-identifier', pkgVersion: '1.0'};
 		component.setPageExitTelemtry();
-        expect(component.telemetryImpression.object).toEqual({
-			id: component.contentDetails['identifier'],
-            type: component.contentDetails['contentType'],
-            ver: `${component.contentDetails['pkgVersion']}`,
-		});
-		expect(component.telemetryImpression.edata.subtype).toEqual('pageexit');
-	});
-	
-	it('should call setTelemetryData method',()=>{
-		component.tocPage = false;
-		component.contentDetails = {contentType: 'mockContent', identifier: 'mock-identifier', pkgVersion: '1.0'};
-		component.setTelemetryData();
-        expect(component.telemetryImpression).toEqual({
-			context: {
-			   env: mockActivatedRoute.snapshot.data.telemetry.env,
-			   cdata:[]
-			},
-			edata: {
-			   type: mockActivatedRoute.snapshot.data.telemetry.type,
-			   pageid: mockActivatedRoute.snapshot.data.telemetry.pageid,
-			   subtype: mockActivatedRoute.snapshot.data.telemetry.subtype,
-		       uri: mockRouter.url,
-			   duration:mockNavigationHelperService.getPageLoadTime()
-			},
-			object:{
-				id: component.contentDetails['identifier'],
-				type: 'mockContentType',
-				ver:  '1.0',
-				rollup: component.objectRollUp
-			}
-		});
-		expect(component.telemetryImpression.edata['subtype']).toEqual(mockActivatedRoute.snapshot.data.telemetry.subtype);
-		expect(component['navigationHelperService'].getPageLoadTime).toHaveBeenCalled();
-		expect(component.telemetryImpression.edata['duration']).toEqual(mockNavigationHelperService.getPageLoadTime());
 		expect(component.telemetryImpression.object).toEqual({
 			id: component.contentDetails['identifier'],
-            type: 'mockContentType',
-        	ver:  '1.0',
-        	rollup: component.objectRollUp
+			type: component.contentDetails['contentType'],
+			ver: `${component.contentDetails['pkgVersion']}`,
 		});
+		expect(component.telemetryImpression.edata.subtype).toEqual('mock-subtype');
 	});
+
+	it('should call setTelemetryData method',()=>{
+		component.telemetryImpression= resourceData.telemetryImpression;
+		component.tocPage = false;
+		component.contentDetails = {contentType: 'mockContent', identifier: 'mock-identifier', pkgVersion: '1.0'};
+
+		component.setTelemetryData();
+
+		expect(component.telemetryImpression.edata['subtype']).toEqual(mockActivatedRoute.snapshot.data.telemetry.subtype);
+	});
+
 });

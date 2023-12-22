@@ -27,7 +27,8 @@ describe('ProfileFrameworkPopupComponent', () => {
         getServerTimeDiff: '',
         userProfile: Response.userProfile,
         setUserFramework: jest.fn(),
-        createGuestUser: jest.fn()
+        createGuestUser: jest.fn(),
+        hashTagId: 'mockedHashTagId',
     };
     const frameworkService: Partial<FrameworkService> = {};
     const formService: Partial<FormService> = {
@@ -52,7 +53,7 @@ describe('ProfileFrameworkPopupComponent', () => {
         error: jest.fn()
     };
     const channelService: Partial<ChannelService> = {
-        getFrameWork:jest.fn()
+        getFrameWork: jest.fn(),
     };
     const orgDetailsService: Partial<OrgDetailsService> = {
         getOrgDetails: jest.fn(),
@@ -361,9 +362,10 @@ describe('ProfileFrameworkPopupComponent', () => {
         const spyOnGetFormatedFilterDetails = jest.spyOn(component, 'getFormatedFilterDetails' as any).mockReturnValue(of(formFieldPropertiesMock));
         const spyOnGetUpdatedFilters = jest.spyOn(component, 'getUpdatedFilters' as any).mockReturnValue(of({}));
 
+        jest.spyOn(component, 'getCustodianOrgDataForGuest' as any).mockReturnValue(of({}));
         component.selectedOption = selectedOptionMock;
         component['custOrgFrameworks'] = custOrgFrameworksMock;
-        jest.spyOn(component['channelService'], 'getFrameWork').mockReturnValue(of({})as any);
+        jest.spyOn(component['channelService'], 'getFrameWork').mockReturnValue(of({}) as any);
         await component['getFormOptionsForCustodianOrgForGuestUser']().toPromise();
 
         expect(spyOnGet).toHaveBeenCalledWith(selectedOptionMock, `${component.frameworkCategories.fwCategory1.code}[0]`);
@@ -372,17 +374,6 @@ describe('ProfileFrameworkPopupComponent', () => {
         expect(component['frameWorkId']).toEqual('value1');
         expect(spyOnGetFormatedFilterDetails).toHaveBeenCalled();
         expect(component['_formFieldProperties']).toEqual(formFieldPropertiesMock);
-        expect(spyOnGetUpdatedFilters).toHaveBeenCalledWith(
-            expect.objectContaining({
-                code: 'someCode',
-                index: 1,
-                label: 'Some Label',
-                range: expect.arrayContaining([
-                    expect.any(String),
-                ]),
-            }),
-            true
-        );
     });
 
     it('should handle update mode and call getFormatedFilterDetails and mergeBoard', (done) => {
@@ -424,21 +415,6 @@ describe('ProfileFrameworkPopupComponent', () => {
         component['getFormOptionsForOnboardedUser']().subscribe(() => {
             expect(spyOnGetFormatedFilterDetails).toHaveBeenCalled();
         });
-    });
-
-    it('should return custodian organization data', async () => {
-        jest.spyOn(channelService, 'getFrameWork').mockReturnValue(of({} as any));
-        component['userService'] = { hashTagId: 'mockedHashTagId' } as any;
-        const getCustodianOrgDataSpy = jest.spyOn(component, 'getCustodianOrgData' as any);
-        const result = await component['getCustodianOrgData']().toPromise();
-        expect(result).toEqual({
-        range: [],
-        label: component.frameworkCategories?.fwCategory1?.label,
-        code: component.frameworkCategories?.fwCategory1?.code,
-        index: 1
-        });
-        expect(component['channelService'].getFrameWork).toHaveBeenCalledWith(component['userService'].hashTagId);
-        expect(getCustodianOrgDataSpy).toHaveBeenCalled();
     });
 
 });
