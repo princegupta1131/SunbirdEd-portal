@@ -6,7 +6,7 @@ import { of, throwError } from 'rxjs';
 import { TelemetryService } from '@sunbird/telemetry';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CacheService } from '../../../../modules/shared/services/cache-service/cache.service';
-import { CertificateDownloadAsPdfService } from 'sb-svg2pdf-v13';
+import { CertificateDownloadAsPdfService } from '@project-sunbird/sb-svg2pdf';
 import { CsCourseService } from '@project-sunbird/client-services/services/course/interface';
 import { CsCertificateService } from '@project-sunbird/client-services/services/certificate/interface';
 import { ProfilePageComponent } from './profile-page.component';
@@ -127,6 +127,7 @@ describe("ProfilePageComponent", () => {
     const mockCslFrameworkService: Partial<CslFrameworkService> = {
         getFrameworkCategoriesObject: jest.fn(),
         frameworkLabelTransform: jest.fn(),
+        getAllFwCatName: jest.fn(),
     };
 
 
@@ -301,6 +302,7 @@ describe("ProfilePageComponent", () => {
             jest.spyOn(profilePageComponent, 'getOtherCertificates').mockImplementation(() => {
                 return {}
             });
+            jest.spyOn(mockCslFrameworkService, 'getAllFwCatName').mockReturnValue(['category1', 'category2']);
             const expectedFormConfig = { code: 'persona1', name: 'Persona 1' };
             //act
             profilePageComponent.ngOnInit();
@@ -313,6 +315,7 @@ describe("ProfilePageComponent", () => {
                 expect(profilePageComponent.getContribution).toHaveBeenCalled();
                 expect(profilePageComponent.getTrainingAttended).toHaveBeenCalled();
                 expect(mockFormService.getFormConfig).toHaveBeenCalledTimes(2);
+		        expect(mockCslFrameworkService.getAllFwCatName).toHaveBeenCalled();
                 done();
             });
         });

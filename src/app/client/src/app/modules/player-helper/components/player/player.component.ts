@@ -303,11 +303,11 @@ export class PlayerComponent implements OnInit, AfterViewInit, OnChanges, OnDest
   }
 
   checkForQumlPlayer() {
-    if (_.get(this.playerConfig, 'metadata.mimeType') === this.configService.appConfig.PLAYER_CONFIG.MIME_TYPE.questionset) {
+    if (_.get(this.playerConfig, 'metadata.mimeType') === this.configService?.appConfig?.PLAYER_CONFIG?.MIME_TYPE?.questionset) {
       this.playerConfig.config.sideMenu.showDownload = false;
       if (!_.get(this.playerConfig, 'metadata.instructions')) {
         this.playerService.getQuestionSetRead(_.get(this.playerConfig, 'metadata.identifier')).subscribe((data: any) => {
-          _.merge(this.playerConfig.metadata, this.playerService.getProperties(data.result.questionset, this.configService.editorConfig.QUESTIONSET_EDITOR.additionalProperties));
+          _.merge(this.playerConfig.metadata, this.playerService.getProperties(data?.result?.questionset, this.configService?.editorConfig?.QUESTIONSET_EDITOR?.additionalProperties));
           this.showQumlPlayer = true;
         }, (error) => {
           this.showQumlPlayer = true;
@@ -616,7 +616,7 @@ export class PlayerComponent implements OnInit, AfterViewInit, OnChanges, OnDest
       });
     } else {
       this.playerConfig.context.userData = {
-        firstName: this.userService.guestUserProfile.formatedName || 'Guest',
+        firstName: this.userService?.guestUserProfile?.formatedName || 'Guest',
         lastName: ''
       };
     }

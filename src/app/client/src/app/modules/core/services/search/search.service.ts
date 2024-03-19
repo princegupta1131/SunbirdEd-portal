@@ -274,7 +274,7 @@ export class SearchService {
         }
       }
     };
-    // option['data'] = this.updateOption(option);
+    option['data'] = this.updateOption(option);
     if (requestParam['pageNumber'] && requestParam['limit']) {
       option.data.request['offset'] = (requestParam.pageNumber - 1) * requestParam.limit;
     }
@@ -294,7 +294,6 @@ export class SearchService {
   **/
   public updateOption(option: any) {
     this.globalFilterCategories = this.cslFrameworkService.getAlternativeCodeForFilter();
-    console.log('updateOption', this.globalFilterCategories);
     if (_.get(option, `data.request.filters.${this.frameworkCategories?.fwCategory1?.code}`)) {
       option.data.request.filters[this.globalFilterCategories[0]] = option.data.request.filters[this.frameworkCategories?.fwCategory1?.code];
       delete option.data.request.filters[this.frameworkCategories?.fwCategory1?.code];
@@ -307,10 +306,7 @@ export class SearchService {
       option.data.request.filters[this.globalFilterCategories[1]] = option.data.request.filters[this.frameworkCategories?.fwCategory2?.code];
       delete option.data.request.filters[this.frameworkCategories?.fwCategory2?.code];
     }
-    // if (_.get(option, 'data.request.filters.subject')) {
-    //   option.data.request.filters['se_subjects'] = option.data.request.filters.subject;
-    //   delete option.data.request.filters.subject;
-    // }
+
     return option.data;
   }
   /**
@@ -420,7 +416,7 @@ export class SearchService {
 
   getFilterValues(contents) {
     let subjects = _.map(contents, content => {
-      return (_.get(content, 'subject'));
+      return (_.get(content, this.frameworkCategories?.fwCategory4?.code));
     });
     subjects = _.values(_.groupBy(_.compact(subjects))).map((subject) => {
       return ({
@@ -519,9 +515,8 @@ export class SearchService {
       if (foundFilter) {
         const { index, label, placeHolder } = foundFilter;
         facet['index'] = index.toString();
-        facet['label'] = label;
-        facet['placeholder'] = placeHolder;
-
+        facet['label'] = this.resourceService.frmelmnts.lbl[label] || label;
+        facet['placeholder'] = this.resourceService.frmelmnts.lbl[placeHolder] || placeHolder;
         switch (facet.name) {
           case 'channel':
             facet['values'] = _.map(facet.values || [], value => ({ ...value, name: value.orgName }));
@@ -533,12 +528,6 @@ export class SearchService {
             facet['name'] = 'mediaType';
             facet['mimeTypeList'] = this.mimeTypeList;
             break;
-          // case 'audience':
-          //   facet['placeholder'] = this.resourceService.frmelmnts.lbl.selectMeantFor;
-          //   break;
-          // case 'additionalCategories':
-          //   facet['placeholder'] = this.resourceService.frmelmnts.lbl.selectAdditionalCategory;
-          //   break;
           default:
             break;
         }
