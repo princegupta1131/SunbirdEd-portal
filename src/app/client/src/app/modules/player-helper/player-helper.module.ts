@@ -15,7 +15,7 @@ import { CoreModule } from '@sunbird/core';
 import { FormsModule } from '@angular/forms';
 import { CommonConsumptionModule } from '@project-sunbird/common-consumption';
 import {QumlPlayerV2Service} from './service/quml-player-v2/quml-player-v2.service';
-// import { QumlPlayerService } from './service/quml-player/quml-player.service';
+import { QumlPlayerService } from './service/quml-player/quml-player.service';
 import { QumlLibraryModule as QsLibModule, QuestionCursor as QsCursor} from '@project-sunbird/sunbird-quml-player';
 import { QumlLibraryModule, QuestionCursor } from '@project-sunbird/sunbird-quml-player-v9';
 import { EditorCursor as QsEditorCursor } from '@project-sunbird/sunbird-questionset-editor';
@@ -25,7 +25,7 @@ import { CslFrameworkService } from '../public/services/csl-framework/csl-framew
   providers: [
     { provide: QsEditorCursor, useExisting: QumlPlayerV2Service },
     { provide: QsCursor, useExisting: QumlPlayerV2Service },
-    CslFrameworkService
+     CslFrameworkService,
     { provide: QuestionCursor, useExisting: QumlPlayerService },
     // { provide: EditorCursor, useExisting: QumlPlayerService },
   ],
