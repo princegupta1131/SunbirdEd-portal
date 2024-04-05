@@ -64,7 +64,7 @@
     "@project-sunbird/discussions-ui": "8.0.1",
     "@project-sunbird/ng2-semantic-ui": "8.0.1",
     "@project-sunbird/sb-content-section": "8.0.1",
-    "@project-sunbird/sb-dashlet": "8.0.1",
+    "@project-sunbird/sb-dashlet": "8.0.2",
     "@project-sunbird/sb-notification": "8.0.1",
     "@project-sunbird/sb-styles": "0.0.16",
     "@project-sunbird/sb-svg2pdf": "8.0.1",
