@@ -76,7 +76,7 @@
     "cassandra-driver": "^4.6.4",
     "cassandra-session-store": "1.0.6",
     "cassandra-store": "^5.0.0",
-    "client-cloud-services": "2.0.3",
+    "client-cloud-services": "3.0.4",
     "compare-versions": "3.5.1",
     "compression": "1.7.2",
     "connect-redis": "4.0.4",
