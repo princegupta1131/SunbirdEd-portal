@@ -56,7 +56,7 @@
     "pouchdb-find": "7.3.0",
     "rxjs": "6.2.1",
     "su-downloader3": "1.0.8",
-    "systeminformation": "5.22.7",
+    "systeminformation": "5.23.8",
     "typescript-ioc": "3.2.2"
   },
   "devDependencies": {
