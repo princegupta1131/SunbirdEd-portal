@@ -74,7 +74,7 @@
     "@project-sunbird/review-comment": "0.0.8",
     "@xmldom/xmldom": "0.8.10",
     "async": "2.6.4",
-    "axios": "1.6.4",
+    "axios": "1.8.2",
     "body-parser": "1.19.2",
     "cassandra-session-store": "1.0.6",
     "client-cloud-services": "8.0.0",
