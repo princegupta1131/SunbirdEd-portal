@@ -50,7 +50,7 @@
     "hashids": "1.2.2",
     "i": "0.3.7",
     "jsonwebtoken": "9.0.2",
-    "lodash": "4.17.21",
+    "lodash": "4.17.23",
     "mitt": "2.1.0",
     "pouchdb": "8.0.1",
     "pouchdb-find": "7.3.0",
